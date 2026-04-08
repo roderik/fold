@@ -104,6 +104,11 @@ claude plugin install claude-md-management@claude-plugins-official
 ```
 
 ```bash
+claude plugin marketplace add austintgriffith/ethskills
+claude plugin install ethskills@ethskills
+```
+
+```bash
 claude plugin marketplace add trailofbits/skills
 claude plugin install skill-improver@trailofbits
 claude plugin install workflow-skill-design@trailofbits
