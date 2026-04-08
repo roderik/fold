@@ -1,3 +1,9 @@
+## Communication
+
+Always use `AskUserQuestion` when you need user input, confirmation, or a decision. Never use plain text questions — the structured UI makes choices clearer and keeps the conversation actionable.
+
+---
+
 ## Workflow
 
 Follow this phased workflow for any non-trivial task. Skip phases that don't apply.

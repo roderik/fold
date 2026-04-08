@@ -18,6 +18,12 @@ Add the Fold workflow configuration to this project's CLAUDE.md file.
 4. Append the following block to the end of the existing CLAUDE.md (preserve all existing content):
 
 ```
+## Communication
+
+Always use `AskUserQuestion` when you need user input, confirmation, or a decision. Never use plain text questions — the structured UI makes choices clearer and keeps the conversation actionable.
+
+---
+
 ## Workflow
 
 Follow this phased workflow for any non-trivial task. Skip phases that don't apply.
