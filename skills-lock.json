@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "fc173a14ecea820739ea971bf81eddbf94e12ce99312fb83e55342724316c5dd"
+    },
+    "agentcore": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "194f6567ad83e506be6a6f29861aec0da3829ecbfdf118c25d5045aa65090108"
+    },
+    "dogfood": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "c1b1133e43d087a9f97de44c2b8abdd4b6c59364d3ac9c0456b01916d58a55b2"
+    },
+    "electron": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "637d08276e7d16c4a4fa1a5d661cb88830ce39679053b74d0b48a7f792667f91"
+    },
+    "resolve-agent-reviews": {
+      "source": "pbakaus/agent-reviews",
+      "sourceType": "github",
+      "computedHash": "cd48d9a9b1251a39b8b04545d2ed5e8d5fa0b12758d20a404d0277bbb0eaf55f"
+    },
+    "resolve-human-reviews": {
+      "source": "pbakaus/agent-reviews",
+      "sourceType": "github",
+      "computedHash": "94ce1aabd4cbc08ecc73bfebf7c569e6a6a0e6aac30c04f92d2b0e01d513fa2b"
+    },
+    "resolve-reviews": {
+      "source": "pbakaus/agent-reviews",
+      "sourceType": "github",
+      "computedHash": "bc9d5432eae35775eefda3eeb944b5e7e899954ede190213edb67c9154267e07"
+    },
+    "slack": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "6304c96ecaf1494e2be424ebb9e52a882ea59b3ee452513764604f349572c7a9"
+    },
+    "vercel-sandbox": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "d4420f40974fe2964a8198d40998227d3f28c19b7f623b0b0f7422b569ea9ce9"
+    }
+  }
+}

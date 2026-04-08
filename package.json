@@ -1,0 +1,13 @@
+{
+  "name": "fold",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fold — a curated collection of skills and configurations for Claude Code.",
+  "author": "Roderik van der Veer",
+  "license": "MIT",
+  "dependencies": {
+    "@redwoodjs/agent-ci": "^0.7.1",
+    "agent-browser": "^0.25.3",
+    "agent-reviews": "^1.0.1"
+  }
+}
