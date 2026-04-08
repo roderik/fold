@@ -1,0 +1,66 @@
+.claude-plugin/plugin.json
+  79a96b769ed38fc0 1-25
+package.json
+  79a96b769ed38fc0 1-13
+sync.sh
+  79a96b769ed38fc0 1-5,7
+commands/setup.md
+  9b5fca7d329e9031 1-257
+README.md
+  79a96b769ed38fc0 1-7,49-50,52-53,56-57,59
+  9b5fca7d329e9031 76-96
+commands/pr.md
+  9b5fca7d329e9031 1-45
+.claude-plugin/marketplace.json
+  79a96b769ed38fc0 1-19
+CLAUDE.md
+  79a96b769ed38fc0 2,100,106,110,115,117,207,209-211
+  9b5fca7d329e9031 16,156
+  484ecc819155b11b 1,3,5-7,9-15,18,20,22-97,99,101,103,105,107-109,111-114,116,118-155,157-206,208,212-217,219,221-222,226-234
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "5d7766ef6b392d03b0c220338696e3d629330d95",
+  "prompts": {
+    "484ecc819155b11b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6b68038f-3a00-4880-a368-4e88367d81f1",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 212,
+      "total_deletions": 30,
+      "accepted_lines": 209,
+      "overriden_lines": 0
+    },
+    "79a96b769ed38fc0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "795b2722-6153-4576-9c3d-8c2d2fc5b6a2",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 119,
+      "total_deletions": 5,
+      "accepted_lines": 87,
+      "overriden_lines": 10
+    },
+    "9b5fca7d329e9031": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ba3a4dd7-6a14-4955-999a-0a798f697f01",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 587,
+      "total_deletions": 264,
+      "accepted_lines": 325,
+      "overriden_lines": 0
+    }
+  }
+}
