@@ -11,6 +11,7 @@ rtk init -g
 curl -L https://dmtrkovalenko.dev/install-fff-mcp.sh | bash
 curl -fsSL https://plannotator.ai/install.sh | bash
 npx ctx7 setup
+npx -y codex-1up install
 
 # Workflow
 claude plugin marketplace add rohitg00/pro-workflow
