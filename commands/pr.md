@@ -1,6 +1,6 @@
 ---
 description: Create a well-structured GitHub pull request for the current branch
-allowed-tools: Bash(git:*), Bash(gh:*), Read, Glob, AskUserQuestion
+allowed-tools: Bash(git:*), Bash(gh:*), Read, Glob, AskUserQuestion, Skill
 argument-hint: [base-branch]
 ---
 
@@ -17,7 +17,7 @@ Create a GitHub pull request for the current branch. If a base branch argument i
    - `git rev-parse --abbrev-ref HEAD` to get the current branch name
    - Check if the branch has a remote tracking branch: `git rev-parse --abbrev-ref @{upstream} 2>/dev/null`
 
-2. **Handle uncommitted changes** — if there are uncommitted changes, ask the user if they want to commit first before creating the PR. Do not proceed until the working tree is clean.
+2. **Handle uncommitted changes** — if there are uncommitted changes, use `AskUserQuestion` to ask whether to commit first or abort. Do not proceed until the working tree is clean.
 
 3. **Read the diffs** — run `git diff main...HEAD` (using the base branch) to understand the actual changes. For large diffs, read the most important files individually.
 
@@ -26,7 +26,7 @@ Create a GitHub pull request for the current branch. If a base branch argument i
    - **Summary**: 1-3 bullet points of what changed and why
    - **Test plan**: how to verify the changes work
 
-5. **Show the draft to the user** — present the title and body. Ask if they want to adjust anything before creating.
+5. **Show the draft to the user** — present the title and body. Use `AskUserQuestion` to ask whether to create as-is or adjust.
 
 6. **Push and create** — run these sequentially:
    - Push the branch: `git push -u origin HEAD`
@@ -43,3 +43,13 @@ Create a GitHub pull request for the current branch. If a base branch argument i
      ```
 
 7. **Report** — show the PR URL to the user.
+
+8. **Next steps** — loop until the user is done:
+
+   Use `AskUserQuestion` with these options:
+   - **Run /plannotator-review** — interactive code review before merge
+   - **Run /autofix-pr** — hand off CI watching and review resolution to the cloud
+   - **Run /wrap-up** — session summary and handoff notes
+   - **Done** — no more shipping steps needed
+
+   When the user picks a skill, invoke it with the `Skill` tool (e.g. `Skill({ skill: "plannotator-review" })`), then loop back and ask again. Stop looping when the user picks "Done".
