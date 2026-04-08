@@ -97,6 +97,34 @@ claude plugin marketplace add openai/codex-plugin-cc
 claude plugin install codex@openai-codex
 ```
 
+```bash
+claude plugin marketplace add anthropics/claude-plugins-official
+claude plugin install plugin-dev@claude-plugins-official
+claude plugin install skill-creator@claude-plugins-official
+claude plugin install claude-md-management@claude-plugins-official
+```
+
+```bash
+claude plugin marketplace add austintgriffith/ethskills
+claude plugin install ethskills@ethskills
+```
+
+```bash
+claude plugin marketplace add trailofbits/skills
+claude plugin install skill-improver@trailofbits
+claude plugin install workflow-skill-design@trailofbits
+claude plugin install gh-cli@trailofbits
+claude plugin install ask-questions-if-underspecified@trailofbits
+claude plugin install audit-context-building@trailofbits
+claude plugin install entry-point-analyzer@trailofbits
+claude plugin install sharp-edges@trailofbits
+claude plugin install differential-review@trailofbits
+claude plugin install variant-analysis@trailofbits
+claude plugin install spec-to-code-compliance@trailofbits
+claude plugin install static-analysis@trailofbits
+claude plugin install fp-check@trailofbits
+```
+
 ### Phase 3: Configure settings
 
 Apply recommended Claude Code settings:
@@ -112,23 +140,16 @@ Run these skills:
 /last30days setup
 ```
 
-### Phase 5: Configure project CLAUDE.md
+### Phase 5: Clean up legacy CLAUDE.md configuration
 
-The canonical source of the workflow configuration is the Fold plugin's own `CLAUDE.md`, located at the root of this plugin's repository (the same directory that contains `commands/`, `skills/`, and `README.md`).
+Older versions of Fold wrote workflow configuration directly into the project's `CLAUDE.md`. This is no longer needed — the Fold plugin's `CLAUDE.md` now loads the workflow via `@skills/workflow/SKILL.md`, so it's always up to date automatically.
 
-1. Check if a `CLAUDE.md` exists in the current working directory. If not, create one.
+1. Check if a `CLAUDE.md` exists in the current working directory.
 
-2. Read the current project `CLAUDE.md` and the plugin's canonical `CLAUDE.md`.
+2. If it exists, check whether it contains the legacy Fold configuration by looking for the string `RESEARCH  →  PLAN  →  IMPLEMENT  →  VERIFY  →  REVIEW  →  SHIP`.
 
-3. Check if Fold configuration is already present by looking for the string `RESEARCH  →  PLAN  →  IMPLEMENT  →  VERIFY  →  REVIEW  →  SHIP` in the project's `CLAUDE.md`.
+3. **If legacy content found**: remove all Fold-managed sections (from `## Communication` through `## Caveman` inclusive, including the final caveman paragraph). Preserve any non-Fold content the user added. Tell the user: "Removed legacy Fold workflow from CLAUDE.md — it's now loaded automatically via the plugin."
 
-4. **If not present**: append the full content of the plugin's `CLAUDE.md` to the end of the project's `CLAUDE.md` (preserve all existing content).
+4. **If no legacy content**: nothing to do. Tell the user: "Fold workflow loads automatically via the plugin. No changes needed."
 
-5. **If already present**: compare each section (identified by `## ` headings) between the project's Fold configuration and the plugin's canonical version. For any section where the content differs, replace the project's version with the canonical version. Do not touch sections in the project's `CLAUDE.md` that are not part of the Fold configuration. Report which sections were updated.
-
-6. Tell the user the result:
-   - If freshly added: "Fold workflow configured in CLAUDE.md. Run `/teach-impeccable` to set up design context for this project."
-   - If updated: list the sections that changed.
-   - If already up to date: "Fold configuration is already up to date."
-
-7. Tell the user to run `/reload-plugins` to pick up the newly installed plugins in the current session.
+5. Tell the user to run `/reload-plugins` to pick up the newly installed plugins in the current session.

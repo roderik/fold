@@ -1,0 +1,74 @@
+{
+  "skill_name": "grafana",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "find the root cause for [FIRING:2] KubePodRestartingKubePodRestarting\n\nNamespace: dalp-staging\nPod: dalp-didx-55b8d49467-qchhh\nContainer: didx\nSummary: KubePodRestarting\n\nGrafana v12.4.1 | Today at 15:08",
+      "expected_output": "Should query Prometheus for termination reason, pull Loki logs for the didx container, check memory/CPU metrics, and synthesize a root cause analysis with evidence from the logs/metrics.",
+      "files": [],
+      "assertions": [
+        {
+          "description": "Queries Prometheus for pod restart count or termination reason",
+          "type": "output_contains_any",
+          "values": ["kube_pod_container_status_restarts_total", "kube_pod_container_status_last_terminated_reason", "prom-instant", "prom "]
+        },
+        {
+          "description": "Queries Loki for didx container logs",
+          "type": "output_contains_any",
+          "values": ["loki", "namespace=\"dalp-staging\"", "container=\"didx\""]
+        },
+        {
+          "description": "Provides a root cause analysis or summary of findings",
+          "type": "output_contains_any",
+          "values": ["root cause", "Root Cause", "terminated", "OOM", "error", "crash", "DATABASE_URL"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "the dapi in dalp-staging seems slow, p99 latency is way up. can you check what's going on?",
+      "expected_output": "Should query Prometheus for HTTP latency metrics (histogram_quantile), check CPU/memory for the dapi pods, look at Loki logs for errors or slow queries, and possibly check Tempo for slow traces.",
+      "files": [],
+      "assertions": [
+        {
+          "description": "Queries Prometheus for latency or request duration metrics",
+          "type": "output_contains_any",
+          "values": ["histogram_quantile", "http_request_duration", "request_duration", "latency", "prom "]
+        },
+        {
+          "description": "Targets the dapi service in dalp-staging",
+          "type": "output_contains_any",
+          "values": ["dapi", "dalp-staging"]
+        },
+        {
+          "description": "Checks logs or traces for additional context",
+          "type": "output_contains_any",
+          "values": ["loki", "tempo", "logs", "traces"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "are there any OOM kills in dalp-production in the last 24 hours?",
+      "expected_output": "Should query Prometheus for OOMKilled termination reason across all pods in dalp-production namespace with a 24h range, and check Loki for OOM-related log entries.",
+      "files": [],
+      "assertions": [
+        {
+          "description": "Queries for OOM termination reason via Prometheus",
+          "type": "output_contains_any",
+          "values": ["OOMKilled", "last_terminated_reason", "oom", "OOM"]
+        },
+        {
+          "description": "Targets dalp-production namespace",
+          "type": "output_contains",
+          "value": "dalp-production"
+        },
+        {
+          "description": "Uses 24h time range",
+          "type": "output_contains_any",
+          "values": ["24h", "--range 24h", "last 24"]
+        }
+      ]
+    }
+  ]
+}
