@@ -30,7 +30,6 @@ claude plugin install plannotator@plannotator
 # Design
 claude plugin marketplace add pbakaus/impeccable
 claude plugin install impeccable@impeccable
-claude plugin install frontend-design@claude-plugins-official
 
 # Marketing
 claude plugin marketplace add coreyhaines31/marketingskills
