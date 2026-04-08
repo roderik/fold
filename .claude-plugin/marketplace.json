@@ -1,0 +1,19 @@
+{
+  "name": "fold",
+  "owner": {
+    "name": "Roderik van der Veer"
+  },
+  "metadata": {
+    "description": "Fold — a curated collection of skills and configurations for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "fold",
+      "source": {
+        "source": "github",
+        "repo": "roderik/fold"
+      },
+      "description": "Skills and configurations for Claude Code."
+    }
+  ]
+}

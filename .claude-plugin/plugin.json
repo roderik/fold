@@ -1,0 +1,25 @@
+{
+  "name": "fold",
+  "description": "Fold — a curated collection of skills and configurations for Claude Code.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Roderik van der Veer"
+  },
+  "homepage": "https://github.com/roderik/fold",
+  "repository": "https://github.com/roderik/fold",
+  "license": "MIT",
+  "mcpServers": {
+    "octocode": {
+      "command": "npx",
+      "args": ["octocode-mcp@latest"]
+    },
+    "restate-docs": {
+      "type": "http",
+      "url": "https://docs.restate.dev/mcp"
+    },
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp"
+    }
+  }
+}
