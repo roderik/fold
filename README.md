@@ -4,105 +4,57 @@ A curated collection of skills and configurations for Claude Code.
 
 ## Installation
 
+Install the Fold plugin:
+
 ```bash
-# Installed packages
-brew install rtk jq ripgrep fd ast-grep shellcheck shfmt schpet/tap/linear agent-browser
-rtk init -g
-curl -L https://dmtrkovalenko.dev/install-fff-mcp.sh | bash
-curl -fsSL https://plannotator.ai/install.sh | bash
-npx ctx7 setup
-npx -y codex-1up install
-agent-browser install
-
-# Workflow
-claude plugin marketplace add rohitg00/pro-workflow
-claude plugin install pro-workflow@pro-workflow
-
-# Context protection
-claude plugin marketplace add mksglu/context-mode
-claude plugin install context-mode@context-mode
-claude plugin marketplace add JuliusBrussee/caveman
-claude plugin install caveman@caveman
-
-# Planning
-claude plugin marketplace add backnotprop/plannotator
-claude plugin install plannotator@plannotator
-
-# Design
-claude plugin marketplace add pbakaus/impeccable
-claude plugin install impeccable@impeccable
-
-# Marketing
-claude plugin marketplace add coreyhaines31/marketingskills
-claude plugin install marketing-skills
-
-# Research
-claude plugin marketplace add mvanhorn/last30days-skill
-claude plugin install last30days@last30days-skill
-
-# Second opinion
-claude plugin marketplace add openai/codex-plugin-cc
-claude plugin install codex@openai-codex
-
-# All the rest
 claude plugin marketplace add roderik/fold
 claude plugin install fold@fold
 ```
 
-## Setup
-
-Somebasic settings:
-
-```
-jq '. * {"env":{"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS":"1","CLAUDE_CODE_NO_FLICKER":"1","CLAUDE_CODE_NEW_INIT":"1"},"attribution":{"commit":"","pr":""}}' ~/.claude/settings.json > /tmp/settings.json && mv /tmp/settings.json ~/.claude/settings.json
-```
-
-Start with an initial new style CLAUDE.md file
-```
-/init
-```
-
-```
-/codex:setup --enable-review-gate
-/last30days setup
-```
-
-Register at exa.ai for 1,000 free searches/month, no credit card required.
-
-```
-# Add to ~/.config/last30days/.env
-EXA_API_KEY=...
-```
-
-Register at scrapecreators.com for 100 free API calls (no credit card required).
-
-```
-# Add to ~/.config/last30days/.env
-SCRAPECREATORS_API_KEY=...
-```
-
-In your project run
-
-```
-npx @tanstack/intent@latest install
-```
-
-## Project CLAUDE.md Configuration
-
-Run `/fold:setup` in any project to automatically add the Fold workflow configuration to that project's `CLAUDE.md`.
+Then run setup to install everything else:
 
 ```
 /fold:setup
 ```
 
-This appends the full workflow (Research, Planning, Implementation, Verification, Review, Shipping, File Search, Design, Delegation, Self-Correction, Caveman) to your project's CLAUDE.md. It's idempotent — running it again won't duplicate the config.
+This handles the full tool chain:
 
-### Why this matters
+| Category | What gets installed |
+|----------|-------------------|
+| Homebrew | rtk, jq, ripgrep, fd, ast-grep, shellcheck, shfmt, linear, agent-browser |
+| npm | agent-ci, agent-reviews, ctx7, codex-1up |
+| Scripts | fff MCP server, Plannotator |
+| Config | RTK global config, Context7 (skill mode), Codex (yolo profile) |
+| Plugins | pro-workflow, context-mode, caveman, plannotator, impeccable, marketing-skills, last30days, codex |
+| Settings | agent teams, no-flicker, new init, empty attribution |
+| Project | Appends Fold workflow configuration to CLAUDE.md |
 
-The plugin's CLAUDE.md is loaded automatically, but Claude prioritizes instructions it sees in the **project's own** CLAUDE.md. Without these entries:
+After setup, run `/reload-plugins` to activate everything in the current session.
 
-- **fff tools won't be preferred** — Claude defaults to its built-in Grep/Glob instead of the frecency-ranked fff MCP tools
-- **Context7 won't trigger automatically** — Claude won't proactively look up library docs unless told to
-- **Codex delegation won't happen proactively** — Claude will keep trying itself instead of handing off when stuck
-- **The workflow phases won't be followed** — Claude won't structure its work into Research → Plan → Implement → Verify → Review → Ship
-- **Caveman won't load** — the token-saving context compression won't activate
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `/fold:setup` | Full install — tools, plugins, settings, and project CLAUDE.md |
+| `/fold:update` | Update all tools and plugins to their latest versions |
+| `/fold:doctor` | Check that everything is installed and report pass/fail |
+| `/fold:pr` | Create a well-structured GitHub pull request |
+
+## API Keys
+
+After setup, configure API keys for optional services:
+
+- [exa.ai](https://exa.ai) — 1,000 free searches/month, no credit card required
+- [scrapecreators.com](https://scrapecreators.com) — 100 free API calls, no credit card required
+
+```bash
+# Add to ~/.config/last30days/.env
+EXA_API_KEY=...
+SCRAPECREATORS_API_KEY=...
+```
+
+## Project CLAUDE.md
+
+`/fold:setup` appends the Fold workflow to the project's CLAUDE.md. Running it again updates changed sections without duplicating content.
+
+Claude prioritizes instructions in the **project's own** CLAUDE.md over plugin instructions. Without these entries, tools like fff, Context7, Codex delegation, and the workflow phases won't activate reliably.
