@@ -6,12 +6,13 @@ A curated collection of skills and configurations for Claude Code.
 
 ```bash
 # Installed packages
-brew install rtk
+brew install rtk jq ripgrep fd ast-grep shellcheck shfmt schpet/tap/linear agent-browser
 rtk init -g
 curl -L https://dmtrkovalenko.dev/install-fff-mcp.sh | bash
 curl -fsSL https://plannotator.ai/install.sh | bash
 npx ctx7 setup
 npx -y codex-1up install
+agent-browser install
 
 # Workflow
 claude plugin marketplace add rohitg00/pro-workflow
