@@ -43,3 +43,10 @@ Create a GitHub pull request for the current branch. If a base branch argument i
      ```
 
 7. **Report** — show the PR URL to the user.
+
+8. **Next steps** — after showing the PR URL, present the remaining shipping workflow:
+   - `/plannotator-review` — interactive code review before merge
+   - `/autofix-pr` — hand off CI watching and review resolution to the cloud
+   - `/wrap-up` — session summary and handoff notes
+
+   Ask which of these the user wants to run, or if they're done.
