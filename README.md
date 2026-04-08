@@ -50,6 +50,12 @@ claude plugin install fold@fold
 
 ## Setup
 
+Somebasic settings:
+
+```
+jq '. * {"env":{"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS":"1","CLAUDE_CODE_NO_FLICKER":"1","CLAUDE_CODE_NEW_INIT":"1"},"attribution":{"commit":"","pr":""}}' ~/.claude/settings.json > /tmp/settings.json && mv /tmp/settings.json ~/.claude/settings.json
+```
+
 ```
 /codex:setup --enable-review-gate
 /last30days setup
