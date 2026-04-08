@@ -1,6 +1,6 @@
 ---
 description: Create a well-structured GitHub pull request for the current branch
-allowed-tools: Bash(git:*), Bash(gh:*), Read, Glob, AskUserQuestion
+allowed-tools: Bash(git:*), Bash(gh:*), Read, Glob, AskUserQuestion, Skill
 argument-hint: [base-branch]
 ---
 
@@ -44,9 +44,12 @@ Create a GitHub pull request for the current branch. If a base branch argument i
 
 7. **Report** — show the PR URL to the user.
 
-8. **Next steps** — after showing the PR URL, present the remaining shipping workflow:
-   - `/plannotator-review` — interactive code review before merge
-   - `/autofix-pr` — hand off CI watching and review resolution to the cloud
-   - `/wrap-up` — session summary and handoff notes
+8. **Next steps** — loop until the user is done:
 
-   Ask which of these the user wants to run, or if they're done.
+   Use `AskUserQuestion` with these options:
+   - **Run /plannotator-review** — interactive code review before merge
+   - **Run /autofix-pr** — hand off CI watching and review resolution to the cloud
+   - **Run /wrap-up** — session summary and handoff notes
+   - **Done** — no more shipping steps needed
+
+   When the user picks a skill, invoke it with the `Skill` tool (e.g. `Skill({ skill: "plannotator-review" })`), then loop back and ask again. Stop looping when the user picks "Done".
