@@ -97,6 +97,29 @@ claude plugin install codex@openai-codex
 ```
 
 ```bash
+claude plugin marketplace add anthropics/claude-plugins-official
+claude plugin install plugin-dev@claude-plugins-official
+claude plugin install skill-creator@claude-plugins-official
+claude plugin install claude-md-management@claude-plugins-official
+```
+
+```bash
+claude plugin marketplace add trailofbits/skills
+claude plugin install skill-improver@trailofbits
+claude plugin install workflow-skill-design@trailofbits
+claude plugin install gh-cli@trailofbits
+claude plugin install ask-questions-if-underspecified@trailofbits
+claude plugin install audit-context-building@trailofbits
+claude plugin install entry-point-analyzer@trailofbits
+claude plugin install sharp-edges@trailofbits
+claude plugin install differential-review@trailofbits
+claude plugin install variant-analysis@trailofbits
+claude plugin install spec-to-code-compliance@trailofbits
+claude plugin install static-analysis@trailofbits
+claude plugin install fp-check@trailofbits
+```
+
+```bash
 claude plugin marketplace add roderik/fold
 claude plugin install fold@fold
 ```

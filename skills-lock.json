@@ -6,20 +6,20 @@
       "sourceType": "github",
       "computedHash": "fc173a14ecea820739ea971bf81eddbf94e12ce99312fb83e55342724316c5dd"
     },
-    "agentcore": {
-      "source": "vercel-labs/agent-browser",
-      "sourceType": "github",
-      "computedHash": "194f6567ad83e506be6a6f29861aec0da3829ecbfdf118c25d5045aa65090108"
-    },
     "dogfood": {
       "source": "vercel-labs/agent-browser",
       "sourceType": "github",
       "computedHash": "c1b1133e43d087a9f97de44c2b8abdd4b6c59364d3ac9c0456b01916d58a55b2"
     },
-    "electron": {
-      "source": "vercel-labs/agent-browser",
+    "fallow": {
+      "source": "fallow-rs/fallow-skills",
       "sourceType": "github",
-      "computedHash": "637d08276e7d16c4a4fa1a5d661cb88830ce39679053b74d0b48a7f792667f91"
+      "computedHash": "d2d3bfec8c94781cf2ed05410b6cb077a6039391a445b435bd8a7846f5c3d4d7"
+    },
+    "logging-best-practices": {
+      "source": "boristane/agent-skills",
+      "sourceType": "github",
+      "computedHash": "b4810947c33b5356bf385c84cfe387afa9c54af652baaedb7d642a083cceaa4c"
     },
     "resolve-agent-reviews": {
       "source": "pbakaus/agent-reviews",
@@ -36,15 +36,20 @@
       "sourceType": "github",
       "computedHash": "bc9d5432eae35775eefda3eeb944b5e7e899954ede190213edb67c9154267e07"
     },
-    "slack": {
-      "source": "vercel-labs/agent-browser",
+    "tdd": {
+      "source": "mattpocock/skills",
       "sourceType": "github",
-      "computedHash": "6304c96ecaf1494e2be424ebb9e52a882ea59b3ee452513764604f349572c7a9"
+      "computedHash": "ad055544599481182d0079c4198e85da26677cb408a677be2da04915375f0427"
     },
-    "vercel-sandbox": {
-      "source": "vercel-labs/agent-browser",
+    "turborepo": {
+      "source": "vercel/turborepo",
       "sourceType": "github",
-      "computedHash": "d4420f40974fe2964a8198d40998227d3f28c19b7f623b0b0f7422b569ea9ce9"
+      "computedHash": "3e4a4f187f4064de1aee81f1000f18729a3f6f361f55774c05e7a3025f8a194b"
+    },
+    "ubiquitous-language": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "computedHash": "32f8a3426cb2d2c3db05977369e70d793e342c38ea87f5447eb22108c03c8d7a"
     }
   }
 }
