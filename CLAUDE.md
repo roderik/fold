@@ -40,7 +40,8 @@ Research any topic across Reddit, X, YouTube, HN, and the web. Use when you need
 Web search for current information, company lookups, and broad discovery.
 
 - `web_search_exa` for general web search
-- `get_code_context_exa` for API usage and code examples
+- `get_code_context_exa` for code examples, documentation, and programming solutions from GitHub, Stack Overflow, and docs
+- `crawling_exa` for fetching full content from a known URL
 - Use search operators: `site:`, quoted phrases, `intitle:` to narrow results
 - Lower `tokensNum` (1000-2000) for focused snippets, higher (5000+) for comprehensive context
 
@@ -51,6 +52,10 @@ Semantic code research across GitHub/GitLab repos (public + private based on you
 - Searches repos naturally — find how others solved similar problems
 - LSP intelligence: go-to-definition, find references, call hierarchy
 - Also works for local code search, directory browsing, file finding
+
+### Restate Docs
+
+Use the `restate-docs` MCP tools (`search_restate`, `get_page_restate`) when working with Restate — the durable execution framework. Use for Restate SDK APIs, service definitions, deployment, configuration, and patterns.
 
 ### Context7
 
@@ -228,13 +233,10 @@ Key design commands:
 
 When the user corrects me or I make a mistake:
 1. Acknowledge specifically what went wrong
-2. Propose a concise rule: `[LEARN] Category: One-line rule`
-3. Wait for approval before adding to LEARNED section
-
-Also available: `/learn-rule` from Pro Workflow for persistent self-correction across sessions.
+2. Run `/learn-rule` from Pro Workflow to capture the correction as a persistent learning rule
 
 ---
 
 ## Caveman
 
-Load `/caveman`
+At the start of every conversation, invoke the `/caveman` skill before responding to the user.
