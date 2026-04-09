@@ -5,7 +5,6 @@ user-invocable: false
 license: MIT
 metadata:
   author: roderik
-  version: "0.3.0"
 ---
 
 ## Epistemic Discipline
