@@ -390,14 +390,14 @@ Assess findings and register human decisions. Convergence point for all tracks.
 - `/security-audit decide` — interactive: present each finding, ask for decision
 - `/security-audit decide --finding "<description>"` — assess a specific finding
 
-**Trail of Bits skills:** `sharp-edges`, `fp-check` (for assessment)
+**Trail of Bits skills:** `sharp-edges` (for assessment)
 
 **Decision types:** `confirmed`, `false-positive`, `accepted-risk`, `fix-planned`, `fix-now`, `wont-fix`
 
 **Workflow:**
 
 1. Collect all unresolved findings from the current session or a previous audit report.
-2. For each finding, execute the **Finding Analysis** shared procedure (see `references/finding-analysis.md`): read source → trace data flow → cross-reference project context → invoke `sharp-edges` + `fp-check` → FP gate (3 checks) → "Do Not Report" filters → confidence scoring → classification.
+2. For each finding, execute the **Finding Analysis** shared procedure (see `references/finding-analysis.md`): read source → trace data flow → cross-reference project context → invoke `sharp-edges` → FP gate (3 checks) → "Do Not Report" filters → confidence scoring → classification.
 3. **Present assessment to the human.** Always present the full analysis and wait for the human to decide. Never apply fixes before the human chooses `fix-now`.
 
    If classification is `confirmed` AND the fix meets Fix-Now eligibility criteria (see `references/fix-now-procedure.md`), include a **Proposed Fix** section describing exactly what code changes would be made.

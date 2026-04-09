@@ -120,7 +120,6 @@ claude plugin install differential-review@trailofbits
 claude plugin install variant-analysis@trailofbits
 claude plugin install spec-to-code-compliance@trailofbits
 claude plugin install static-analysis@trailofbits
-claude plugin install fp-check@trailofbits
 ```
 
 ```bash
