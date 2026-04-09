@@ -46,7 +46,11 @@ ctx7 setup --claude --cli -y
 codex-1up install --yes --no-vscode --install-node skip --tools skip --codex-cli yes --profiles-scope single --profile yolo --profile-mode add --web-search live --file-opener none --credentials-store auto --alt-screen auto --personality pragmatic --skills skip --agents-md skip
 ```
 
-### Phase 4: Update Agent Browser browsers
+### Phase 4: Update cship and Agent Browser
+
+```bash
+curl -fsSL https://cship.dev/install.sh | bash
+```
 
 ```bash
 agent-browser install
@@ -59,11 +63,6 @@ Run each command separately. These will pull the latest versions:
 ```bash
 claude plugin marketplace add rohitg00/pro-workflow
 claude plugin install pro-workflow@pro-workflow
-```
-
-```bash
-claude plugin marketplace add mksglu/context-mode
-claude plugin install context-mode@context-mode
 ```
 
 ```bash
