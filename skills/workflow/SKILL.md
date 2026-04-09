@@ -5,7 +5,6 @@ user-invocable: false
 license: MIT
 metadata:
   author: roderik
-  version: "0.2.0"
 ---
 
 ## Epistemic Discipline
@@ -22,6 +21,34 @@ Always use `AskUserQuestion` when you need user input, confirmation, or a decisi
 
 ---
 
+## Code Quality Principles
+
+AI agents generate slop — unnecessary comments, defensive code for impossible scenarios, over-engineered abstractions, features nobody asked for. Every line of code has ongoing cost: tests, documentation, security patches, mental overhead. The value is the functionality, not the code itself. These principles prevent slop from entering the codebase.
+
+**KISS** — Choose the simplest approach that solves the actual problem. A readable 5-line if/else beats a clever 1-line ternary. Three similar lines of code is better than a premature abstraction.
+
+**YAGNI** — Build what was asked for, nothing more. No speculative features, no "while I'm here" additions, no preemptive extensibility. If nobody asked for it and there's no concrete use case today, don't build it.
+
+**Boy Scout Rule** — Leave every file you touch cleaner than you found it. Remove dead code, unnecessary comments, unused imports, stale TODOs. This applies especially to AI-generated code — spawn a background subagent to scan each modified file for existing slop and clean it up in parallel with your next unit of work.
+
+**Least Surprise** — Code should do what a reader expects. Prefer conventional patterns over novel ones. Name things for what they do, not how they work internally.
+
+**Chesterton's Fence** — Before simplifying or removing code, understand why it exists. Check git blame, check tests, check callers. If you can't explain why it was written this way, you're not ready to change it.
+
+### Anti-rationalization guardrails
+
+AI agents talk themselves into cutting corners. Watch for these:
+
+| Rationalization | Reality |
+|----------------|---------|
+| "Fewer lines is always simpler" | A 1-line nested ternary is not simpler than a 5-line if/else. Simplicity is comprehension speed, not line count. |
+| "This abstraction might be useful later" | If it's not used now, it's complexity without value. Remove it. |
+| "The original author must have had a reason" | Maybe. Check git blame. But accumulated complexity often has no reason — it's residue of iteration under pressure. |
+| "It's faster to do it all at once" | It *feels* faster until something breaks and you can't find which of 500 changed lines caused it. |
+| "I'll clean this up later" | No you won't. Clean it up now or it stays forever. |
+
+---
+
 ## Workflow
 
 Follow this phased workflow for any non-trivial task. Skip phases that don't apply.
@@ -34,8 +61,8 @@ RESEARCH  →  PLAN  →  IMPLEMENT  →  VERIFY  →  REVIEW  →  SHIP
 |-------|-------|
 | Research | last30days, Exa, Octocode, Context7, Restate Docs, Figma, fff |
 | Plan | Pro Workflow `/develop`, Plannotator, `/pro-workflow:thoroughness-scoring` |
-| Implement | Pro Workflow phases, Codex `/codex:rescue`, browser automation (agent-browser, electron, slack), `/pro-workflow:batch-orchestration`, `/pro-workflow:parallel-worktrees` |
-| Verify | Tiered testing, Fallow code health, agent-ci local CI |
+| Implement | Pro Workflow phases, Codex `/codex:rescue`, anti-slop subagents, browser automation, `/pro-workflow:batch-orchestration`, `/pro-workflow:parallel-worktrees` |
+| Verify | Tiered testing, repo testing skill discovery, Fallow code health, agent-ci local CI |
 | Review | `/simplify`, `/pro-workflow:deslop`, Codex reviews, agent-reviews, `/impeccable:audit`, `/impeccable:critique`, `/security-audit` |
 | Ship | `/pro-workflow:smart-commit`, `/fold:pr`, `/pro-workflow:wrap-up`, `/plannotator-review` |
 
@@ -138,6 +165,14 @@ When stuck after exhausting obvious approaches:
 
 Do NOT wait for the user to ask — use `/codex:rescue` proactively when you've hit a wall.
 
+### Quality During Build
+
+**Touch it, clean it** — When modifying a file, spawn a background subagent to scan it for existing slop (dead code, redundant comments, unused imports, overly defensive code). The subagent cleans up the file while you continue with the next unit of work. Don't accumulate slop — every touched file leaves cleaner than you found it.
+
+**Change sizing** — Aim for ~100 lines changed per logical unit. At ~300 lines, consider splitting. Beyond 500 lines, invest in automation (`/pro-workflow:batch-orchestration`, codemods) rather than manual edits. Large manual changes are error-prone and exhausting to review.
+
+**Stop-the-line** — When something breaks mid-implementation, stop adding features. Preserve evidence (error output, logs, repro steps), diagnose root cause, fix it, verify the fix, then resume. Don't guess-and-fix — diagnose first.
+
 ---
 
 ## Methodology References
@@ -200,25 +235,38 @@ Run **fallow** to check for code health issues:
 - **Single-line fixes**: Tier 1 + Tier 2. Full CI if the fix touches shared code.
 - **Refactors touching many files**: All three tiers.
 
+### Testing
+
+Every behavior change, bug fix, and new feature needs a test. No exceptions.
+
+**Prove-It pattern for bug fixes** — Before writing the fix, write a failing test that demonstrates the bug. The test fails (confirming the bug exists), then implement the fix, then the test passes (proving the fix works). This prevents "fixes" that don't actually address the root cause.
+
+**Discover repo testing conventions** — At the start of any task, spawn an Explore subagent to find testing skills and conventions in the target repository. Look for: a `testing` or `test` skill in the repo's skills directory, a `TESTING.md`, test scripts in `package.json` or `Makefile`, or CI workflows that reveal the test command. Every repo will likely have its own testing skill with specifics for that codebase — follow that over generic defaults. The TDD methodology skill provides the red-green-refactor loop, but the repo's testing skill defines *how* to run tests and what frameworks to use.
+
+**DAMP over DRY in tests** — In production code, DRY is usually right. In tests, DAMP (Descriptive And Meaningful Phrases) is better. Each test should read like a specification — a complete story without requiring the reader to trace through shared helpers. Prefer descriptive repetition over test-helper abstractions.
+
+**Test state, not interactions** — Tests that verify method call sequences break on refactor even if behavior is unchanged. Test what the function produces (state), not how it works internally (interactions). Preference for test doubles: real implementation > fake > stub > mock.
+
 ---
 
 ## Review
 
-### `/simplify`
+### Post-Build Review (every branch)
 
-Run after implementing a feature or accepting AI-generated code. Spawns parallel agents checking reuse, quality, and efficiency, then applies fixes.
+AI-generated code accumulates slop that compounds over time — redundant comments, defensive checks for impossible states, abstractions nobody needs. Catching it immediately costs minutes; catching it later costs hours. The generating agent is the worst reviewer of its own output — different models and agents catch different categories of problems.
 
-### `/pro-workflow:deslop`
+**Step 1** — Spawn `/pro-workflow:deslop` as a subagent. It strips AI slop: defensive try/catch, redundant comments, type hacks, over-engineering, backwards-compat shims, features beyond scope. Wait for it to finish before step 2 — deslop removes noise so subsequent reviewers focus on real issues.
 
-Remove AI-generated slop: defensive checks, redundant comments, orphaned debug code. Complementary with `/simplify` — run both on AI-generated code.
+**Step 2** — Spawn these three as parallel subagents:
+- `/simplify` — checks reuse, quality, and efficiency (spawns its own parallel agents internally)
+- `/codex:review --base main` — reviews the cleaned-up diff from an outside perspective
+- `/codex:adversarial-review --base main` — challenges assumptions, design tradeoffs, failure modes. Always run this, not just for "risky" changes — AI-generated code has blind spots the generating agent can't see. Accepts a focus: `/codex:adversarial-review --base main challenge the caching design`
 
-### Codex Reviews
+**Step 3** — Synthesize findings from all three subagents. Apply fixes, dismiss false positives, report summary to the user.
 
-Run before shipping any change:
-- `/codex:review` — reviews uncommitted changes or branch diffs (`--base main`)
-- `/codex:adversarial-review` — challenges assumptions, design tradeoffs, failure modes. Use for risky areas (auth, data loss, race conditions). Accepts a focus: `/codex:adversarial-review --base main challenge the caching design`
+The main thread orchestrates during review — it does not do the reviewing itself.
 
-### agent-reviews
+### PR Reviews
 
 Resolves PR review comments automatically. Three skills for different scopes:
 
@@ -230,12 +278,12 @@ Resolves PR review comments automatically. Three skills for different scopes:
 
 Workflow: fetch unanswered comments → evaluate → fix real issues → dismiss false positives → reply → report summary.
 
-### Impeccable (for UI work)
+### UI Review
 
 - `/impeccable:audit` — technical quality: a11y, perf, theming, responsive. P0-P3 severity ratings.
 - `/impeccable:critique` — UX evaluation: Nielsen's 10 heuristics, persona-based testing, quantitative scoring.
 
-### Security Audit
+### Security Review
 
 - `/security-audit cycle [--scope <path>]` — full security audit cycle (entry points → context → static → review → decide)
 - `/security-audit diff [--base <branch>]` — security-focused diff review of current branch changes
