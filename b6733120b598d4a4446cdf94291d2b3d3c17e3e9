@@ -1,0 +1,23 @@
+skills/workflow/SKILL.md
+  f0d65a1edc43bd89 8,25-52,65-66,169-176,239-250,255,257,259,261-264,266,268,270,282,287
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.6",
+  "base_commit_sha": "b6733120b598d4a4446cdf94291d2b3d3c17e3e9",
+  "prompts": {
+    "f0d65a1edc43bd89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "60fe470a-2061-49c4-b6c4-6a3274b8debe",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 63,
+      "total_deletions": 14,
+      "accepted_lines": 63,
+      "overriden_lines": 0
+    }
+  }
+}
