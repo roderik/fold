@@ -1,0 +1,23 @@
+.claude-plugin/plugin.json
+  f0d65a1edc43bd89 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.6",
+  "base_commit_sha": "30e08893f22fc3356c74cd8bec00a8a13140e68c",
+  "prompts": {
+    "f0d65a1edc43bd89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "60fe470a-2061-49c4-b6c4-6a3274b8debe",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 2,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
