@@ -23,9 +23,9 @@ This handles the full tool chain:
 |----------|-------------------|
 | Homebrew | rtk, jq, ripgrep, fd, ast-grep, shellcheck, shfmt, linear, agent-browser |
 | npm | agent-ci, agent-reviews, ctx7, codex-1up |
-| Scripts | fff MCP server, Plannotator |
-| Config | RTK global config, Context7 (skill mode), Codex (yolo profile) |
-| Plugins | pro-workflow, context-mode, caveman, plannotator, impeccable, marketing-skills, last30days, codex |
+| Scripts | fff MCP server, Plannotator, cship statusline |
+| Config | RTK global config, Context7 (skill mode), Codex (yolo profile), cship (Full Starship Prompt) |
+| Plugins | pro-workflow, caveman, plannotator, impeccable, marketing-skills, last30days, codex |
 | Settings | agent teams, no-flicker, new init, empty attribution |
 | Project | Appends Fold workflow configuration to CLAUDE.md |
 

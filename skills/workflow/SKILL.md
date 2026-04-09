@@ -285,7 +285,7 @@ Run `/impeccable:teach-impeccable` once per project to establish design context.
 
 ## Session Management
 
-See [references/session-tools.md](references/session-tools.md) for the full catalog of context-mode, Pro Workflow session tools, and scheduling.
+See [references/session-tools.md](references/session-tools.md) for the full catalog of Pro Workflow session tools and scheduling.
 
 ---
 

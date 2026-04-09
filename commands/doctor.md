@@ -29,6 +29,7 @@ For each tool below, run `which <tool>` (or the noted command) to verify it's in
 | ctx7 | `which ctx7 && ctx7 --version` |
 | codex-1up | `which codex-1up && codex-1up --version` |
 | codex | `which codex && codex --version` |
+| cship | `which cship && cship --version` |
 
 Run all check commands in parallel where possible.
 
@@ -37,7 +38,6 @@ Run all check commands in parallel where possible.
 Run `claude plugin list` and verify these plugins are installed:
 
 - pro-workflow
-- context-mode
 - caveman
 - plannotator
 - impeccable
@@ -55,6 +55,7 @@ Read `~/.claude/settings.json` and verify these keys are set:
 - `env.CLAUDE_CODE_NEW_INIT` = `"1"`
 - `attribution.commit` = `""`
 - `attribution.pr` = `""`
+- `statusLine.type` = `"command"` and `statusLine.command` = `"cship"`
 
 ### Phase 4: Check project CLAUDE.md
 

@@ -42,14 +42,8 @@ export GRAFANA_PASSWORD=$(echo $GRAFANA_CREDS | jq -r '.[] | select(.label=="pas
 
 ## Running Queries
 
-The CLI script path is relative to this skill directory. Because output can be
-large, run through `ctx_execute` when available to keep raw data out of context:
+The CLI script path is relative to this skill directory:
 
-```
-ctx_execute(language: "shell", code: "bun run skills/grafana/scripts/grafana.ts <command> [args...]")
-```
-
-Or directly via Bash when context-mode is not available:
 ```bash
 bun run skills/grafana/scripts/grafana.ts <command> [args...]
 ```

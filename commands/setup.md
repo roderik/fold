@@ -48,6 +48,53 @@ ctx7 setup --claude --cli -y
 codex-1up install --yes --no-vscode --install-node skip --tools skip --codex-cli yes --profiles-scope single --profile yolo --profile-mode add --web-search live --file-opener none --credentials-store auto --alt-screen auto --personality pragmatic --skills skip --agents-md skip
 ```
 
+**cship statusline:**
+```bash
+curl -fsSL https://cship.dev/install.sh | bash
+```
+
+**cship config** (Full Starship Prompt preset):
+```bash
+cat > ~/.config/cship.toml << 'TOML'
+[cship]
+lines = [
+  "$starship_prompt",
+  "$cship.model $cship.cost $cship.context_bar $cship.usage_limits",
+]
+
+[cship.model]
+symbol = " "
+style  = "bold fg:#7aa2f7"
+
+[cship.cost]
+symbol             = "💰 "
+style              = "fg:#a9b1d6"
+warn_threshold     = 2.0
+warn_style         = "fg:#e0af68"
+critical_threshold = 5.0
+critical_style     = "bold fg:#f7768e"
+
+[cship.context_bar]
+symbol             = " "
+format             = "[$symbol$value]($style)"
+width              = 10
+style              = "fg:#7dcfff"
+warn_threshold     = 40.0
+warn_style         = "fg:#e0af68"
+critical_threshold = 70.0
+critical_style     = "bold fg:#f7768e"
+
+[cship.usage_limits]
+five_hour_format   = "⌛ 5h {pct}%"
+seven_day_format   = "📅 7d {pct}%"
+separator          = " "
+warn_threshold     = 70.0
+warn_style         = "fg:#e0af68"
+critical_threshold = 90.0
+critical_style     = "bold fg:#f7768e"
+TOML
+```
+
 **Agent Browser playwright browsers:**
 ```bash
 agent-browser install
@@ -60,11 +107,6 @@ Run each pair of commands (marketplace add + install) separately. Do not install
 ```bash
 claude plugin marketplace add rohitg00/pro-workflow
 claude plugin install pro-workflow@pro-workflow
-```
-
-```bash
-claude plugin marketplace add mksglu/context-mode
-claude plugin install context-mode@context-mode
 ```
 
 ```bash

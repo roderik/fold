@@ -1,12 +1,5 @@
 # Session Management Tools Reference
 
-## Context Window
-
-- **context-mode** — automatically keeps raw tool output out of context window. Prefer `ctx_batch_execute`, `ctx_search`, `ctx_execute` over raw Bash for large outputs.
-- `/context-mode:ctx-stats` — show token savings this session
-- `/context-mode:ctx-doctor` — diagnose context-mode setup
-- `/context-mode:ctx-purge` — wipe knowledge base (destructive)
-
 ## Pro Workflow Session Tools
 
 | Skill | Purpose |
