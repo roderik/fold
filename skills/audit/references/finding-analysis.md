@@ -22,7 +22,6 @@ If the project maintains security invariants (documented in CLAUDE.md, SECURITY.
 ### 4. Invoke Trail of Bits Skills
 
 a. `Skill({ skill: "sharp-edges" })` — check if the finding matches a known footgun pattern
-b. `Skill({ skill: "fp-check" })` — verify the finding is not a false positive
 
 ### 5. False-Positive Gate (3 checks)
 
