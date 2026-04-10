@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit"
+  short_description: "Security audit workflow for Codex"
+  default_prompt: "Use $audit to run a structured security review of this codebase."

@@ -1,10 +1,10 @@
 # Fold
 
-A curated collection of skills and configurations for Claude Code.
+A curated collection of skills and configurations for Claude Code and Codex.
 
 ## Installation
 
-Install the Fold plugin:
+Install the Fold Claude plugin:
 
 ```bash
 claude plugin marketplace add roderik/fold
@@ -30,6 +30,122 @@ This handles the full tool chain:
 | Project | Appends Fold workflow configuration to CLAUDE.md |
 
 After setup, run `/reload-plugins` to activate everything in the current session.
+
+## Codex Support
+
+Fold now includes a separate Codex plugin layout with no shared skill tree:
+
+| Path | Purpose |
+|------|---------|
+| `.agents/plugins/marketplace.json` | Top-level Codex marketplace metadata |
+| `codex/fold/.codex-plugin/plugin.json` | Codex plugin manifest |
+| `codex/fold/skills/` | Codex-only Fold skills |
+
+This mirrors the repo-local Codex plugin structure used by existing marketplace plugins: marketplace metadata stays at the repo root, while the Codex plugin implementation lives in its own isolated directory.
+
+### Install In Codex
+
+There are two supported ways to install Fold for Codex.
+
+#### Option 1: Repo-local install
+
+Use this when you want Fold available only inside this repository.
+
+1. Clone the repo somewhere on your machine:
+
+```bash
+git clone git@github.com:roderik/fold.git ~/Development/fold
+```
+
+2. Enable the plugin in `~/.codex/config.toml`:
+
+```toml
+[plugins."fold@fold"]
+enabled = true
+```
+
+3. Restart Codex or reopen the repository.
+
+Codex will discover the repo-local marketplace at `.agents/plugins/marketplace.json`, which points at `./codex/fold`.
+
+#### Option 2: Computer-wide install
+
+Use this when you want Fold available across projects on your computer.
+
+1. Clone the repo somewhere stable:
+
+```bash
+git clone git@github.com:roderik/fold.git ~/Development/fold
+```
+
+2. Create the Codex home-local plugin layout:
+
+```bash
+mkdir -p ~/.agents/plugins ~/plugins
+ln -s ~/Development/fold/codex/fold ~/plugins/fold
+```
+
+3. Create or update `~/.agents/plugins/marketplace.json`:
+
+If you already have other local plugins, append the `fold` entry instead of replacing the whole file.
+
+```json
+{
+  "name": "local",
+  "interface": {
+    "displayName": "Local Plugins"
+  },
+  "plugins": [
+    {
+      "name": "fold",
+      "source": {
+        "source": "local",
+        "path": "./plugins/fold"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Coding"
+    }
+  ]
+}
+```
+
+4. Enable the plugin in `~/.codex/config.toml`:
+
+```toml
+[plugins."fold@local"]
+enabled = true
+```
+
+5. Restart Codex.
+
+The home-local layout follows the Codex plugin spec: `~/.agents/plugins/marketplace.json` is the marketplace root, and `./plugins/fold` resolves to `~/plugins/fold`.
+
+### Install The Toolchain
+
+After the plugin is visible in Codex, run the Fold setup flow from a Codex session:
+
+```text
+Use $fold-setup to install the Fold Codex toolchain on this machine
+```
+
+That installs and configures the Codex-side dependencies such as RTK, Context7, agent-browser, `codex-1up`, and the Fold Codex config conventions.
+
+Current Codex-only Fold skills include:
+
+- `fold`
+- `fold-setup`
+- `fold-update`
+- `fold-doctor`
+- `fold-pr`
+
+To sync Codex-portable skills from upstream plugin repos into Fold's Codex plugin tree, run:
+
+```bash
+./sync-codex.sh
+```
 
 ## Commands
 

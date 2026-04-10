@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workflow"
+  short_description: "Fold execution workflow for Codex"
+  default_prompt: "Use $workflow to structure this task from research through shipping."

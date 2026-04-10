@@ -1,0 +1,36 @@
+{
+  "name": "fold",
+  "version": "0.3.0",
+  "description": "Fold for Codex: workflow and engineering discipline for complex software tasks.",
+  "author": {
+    "name": "Roderik van der Veer",
+    "url": "https://github.com/roderik"
+  },
+  "homepage": "https://github.com/roderik/fold",
+  "repository": "https://github.com/roderik/fold",
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "engineering",
+    "review",
+    "testing",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Fold",
+    "shortDescription": "Structured engineering workflow for Codex",
+    "longDescription": "Use Fold in Codex to drive disciplined research, planning, implementation, verification, and review for non-trivial engineering work without coupling to Claude-specific commands or plugin layout.",
+    "developerName": "Roderik van der Veer",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/roderik/fold",
+    "defaultPrompt": [
+      "Use Fold to research, implement, verify, and review a non-trivial code change"
+    ],
+    "brandColor": "#1F2937"
+  }
+}
