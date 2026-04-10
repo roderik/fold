@@ -105,8 +105,9 @@ agent-browser install
 Run each pair of commands (marketplace add + install) separately. Do not install the `fold` plugin itself — that's already installed if this command is running.
 
 ```bash
-claude plugin marketplace add rohitg00/pro-workflow
-claude plugin install pro-workflow@pro-workflow
+claude plugin marketplace add EveryInc/compound-engineering-plugin
+claude plugin install compound-engineering@compound-engineering-plugin
+claude plugin install coding-tutor@compound-engineering-plugin
 ```
 
 ```bash
@@ -164,6 +165,48 @@ claude plugin install differential-review@trailofbits
 claude plugin install variant-analysis@trailofbits
 claude plugin install spec-to-code-compliance@trailofbits
 claude plugin install static-analysis@trailofbits
+```
+
+### Phase 2b: Install skills globally (Claude Code + Codex)
+
+These skills are published on GitHub and are installed globally to both Claude Code (`~/.claude/skills/`) and Codex (`~/.codex/skills/`) via the `skills` CLI. Run each command separately.
+
+```bash
+npx skills add pbakaus/agent-reviews --skill '*' -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add vercel-labs/agent-browser --skill agent-browser --skill dogfood -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add fallow-rs/fallow-skills --skill '*' -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add boristane/agent-skills --skill logging-best-practices -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add mattpocock/skills --skill tdd --skill ubiquitous-language -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add vercel/turborepo --skill '*' -g -a claude-code -a codex -y
+```
+
+Also mirror the Fold-native skills (audit, grafana, linear-cli, workflow) into Codex so the workflow guidance is available there too:
+
+```bash
+npx skills add roderik/fold --skill '*' -g -a codex -y
+```
+
+### Phase 2c: Install Compound Engineering skills for Codex
+
+Compound Engineering ships its own Codex installer that writes prompts and skills into `~/.codex/prompts` and `~/.codex/skills`:
+
+```bash
+bunx @every-env/compound-plugin install compound-engineering --to codex
 ```
 
 ### Phase 3: Configure settings

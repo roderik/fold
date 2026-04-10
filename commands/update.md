@@ -56,13 +56,23 @@ curl -fsSL https://cship.dev/install.sh | bash
 agent-browser install
 ```
 
-### Phase 5: Update Claude Code plugins
+### Phase 5: Remove deprecated plugins
+
+Older versions of Fold shipped `pro-workflow`. It is replaced by Compound Engineering — uninstall it if present:
+
+```bash
+claude plugin uninstall pro-workflow@pro-workflow || true
+claude plugin marketplace remove pro-workflow || true
+```
+
+### Phase 6: Update Claude Code plugins
 
 Run each command separately. These will pull the latest versions:
 
 ```bash
-claude plugin marketplace add rohitg00/pro-workflow
-claude plugin install pro-workflow@pro-workflow
+claude plugin marketplace add EveryInc/compound-engineering-plugin
+claude plugin install compound-engineering@compound-engineering-plugin
+claude plugin install coding-tutor@compound-engineering-plugin
 ```
 
 ```bash
@@ -127,7 +137,49 @@ claude plugin marketplace add roderik/fold
 claude plugin install fold@fold
 ```
 
-### Phase 6: Report
+### Phase 7: Update global skills (Claude Code + Codex)
+
+Re-run the `skills` CLI installs to pick up the latest versions. Each command targets both Claude Code (`~/.claude/skills/`) and Codex (`~/.codex/skills/`).
+
+```bash
+npx skills add pbakaus/agent-reviews --skill '*' -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add vercel-labs/agent-browser --skill agent-browser --skill dogfood -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add fallow-rs/fallow-skills --skill '*' -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add boristane/agent-skills --skill logging-best-practices -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add mattpocock/skills --skill tdd --skill ubiquitous-language -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add vercel/turborepo --skill '*' -g -a claude-code -a codex -y
+```
+
+```bash
+npx skills add roderik/fold --skill '*' -g -a codex -y
+```
+
+Alternatively, run `npx skills update` to refresh every skill already installed via the CLI in one call.
+
+### Phase 8: Update Compound Engineering for Codex
+
+Re-run the Codex installer to sync the latest Compound Engineering prompts and skills into `~/.codex/`:
+
+```bash
+bunx @every-env/compound-plugin install compound-engineering --to codex
+```
+
+### Phase 9: Report
 
 Summarize what was updated. If any command failed, list the failures and suggest manual fixes.
 

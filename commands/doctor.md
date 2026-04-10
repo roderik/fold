@@ -37,7 +37,8 @@ Run all check commands in parallel where possible.
 
 Run `claude plugin list` and verify these plugins are installed:
 
-- pro-workflow
+- compound-engineering
+- coding-tutor
 - caveman
 - plannotator
 - impeccable
@@ -45,6 +46,8 @@ Run `claude plugin list` and verify these plugins are installed:
 - last30days
 - codex
 - fold
+
+Also verify that the deprecated `pro-workflow` plugin is **not** installed — if it is, suggest running `/fold:update` to remove it.
 
 ### Phase 3: Check settings
 
@@ -75,7 +78,7 @@ Present results as a checklist:
 ...
 
 ### Plugins
-- [x] pro-workflow
+- [x] compound-engineering
 - [ ] caveman — not installed
 ...
 

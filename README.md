@@ -25,7 +25,9 @@ This handles the full tool chain:
 | npm | agent-ci, agent-reviews, ctx7, codex-1up |
 | Scripts | fff MCP server, Plannotator, cship statusline |
 | Config | RTK global config, Context7 (skill mode), Codex (yolo profile), cship (Full Starship Prompt) |
-| Plugins | pro-workflow, caveman, plannotator, impeccable, marketing-skills, last30days, codex |
+| Plugins | compound-engineering, coding-tutor, caveman, plannotator, impeccable, marketing-skills, last30days, codex |
+| Global skills | Installed via `npx skills` to both `~/.claude/skills/` and `~/.codex/skills/` — `pbakaus/agent-reviews`, `vercel-labs/agent-browser`, `fallow-rs/fallow-skills`, `boristane/agent-skills`, `mattpocock/skills` (tdd, ubiquitous-language), `vercel/turborepo` |
+| Codex extras | Compound Engineering prompts + skills installed via `bunx @every-env/compound-plugin install compound-engineering --to codex` |
 | Settings | agent teams, no-flicker, new init, empty attribution |
 | Project | Appends Fold workflow configuration to CLAUDE.md |
 
