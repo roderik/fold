@@ -1,0 +1,629 @@
+codex/fold/skills/fallow/references/cli-reference.md
+  3e2d629f14c13e88 1-1272
+codex/fold/skills/agent-browser/references/commands.md
+  3e2d629f14c13e88 1-295
+codex/fold/skills/impeccable-critique/reference/heuristics-scoring.md
+  3e2d629f14c13e88 1-234
+codex/fold/skills/referral-program/evals/evals.json
+  3e2d629f14c13e88 1-89
+codex/fold/skills/fold-setup/SKILL.md
+  3e2d629f14c13e88 1-157
+codex/fold/skills/sales-enablement/SKILL.md
+  3e2d629f14c13e88 1-359
+codex/fold/skills/cold-email/references/frameworks.md
+  3e2d629f14c13e88 1-90
+codex/fold/skills/onboarding-cro/SKILL.md
+  3e2d629f14c13e88 1-220
+codex/fold/skills/resolve-agent-reviews/SKILL.md
+  3e2d629f14c13e88 1-179
+codex/fold/skills/turborepo/references/ci/github-actions.md
+  3e2d629f14c13e88 1-162
+codex/fold/skills/site-architecture/references/mermaid-templates.md
+  3e2d629f14c13e88 1-216
+codex/fold/skills/signup-flow-cro/SKILL.md
+  3e2d629f14c13e88 1-359
+codex/fold/skills/ad-creative/SKILL.md
+  3e2d629f14c13e88 1-362
+codex/fold/skills/marketing-ideas/references/ideas-by-category.md
+  3e2d629f14c13e88 1-366
+codex/fold/skills/pricing-strategy/references/tier-structure.md
+  3e2d629f14c13e88 1-232
+codex/fold/skills/resolve-human-reviews/SKILL.md
+  3e2d629f14c13e88 1-174
+codex/fold/skills/popup-cro/SKILL.md
+  3e2d629f14c13e88 1-454
+codex/fold/skills/trailofbits-sharp-edges/references/lang-rust.md
+  3e2d629f14c13e88 1-272
+codex/fold/skills/impeccable-extract/SKILL.md
+  3e2d629f14c13e88 1-90
+codex/fold/skills/pricing-strategy/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/schema-markup/evals/evals.json
+  3e2d629f14c13e88 1-87
+codex/fold/skills/free-tool-strategy/references/tool-types.md
+  3e2d629f14c13e88 1-217
+codex/fold/skills/trailofbits-workflow-skill-design/SKILL.md
+  3e2d629f14c13e88 1-258
+codex/fold/skills/dogfood/references/issue-taxonomy.md
+  3e2d629f14c13e88 1-109
+codex/fold/skills/email-sequence/references/email-types.md
+  3e2d629f14c13e88 1-515
+codex/fold/skills/dogfood/SKILL.md
+  3e2d629f14c13e88 1-220
+codex/fold/skills/ab-test-setup/SKILL.md
+  3e2d629f14c13e88 1-353
+codex/fold/skills/agent-browser/templates/authenticated-session.sh
+  3e2d629f14c13e88 1-105
+codex/fold/skills/sales-enablement/references/deck-frameworks.md
+  3e2d629f14c13e88 1-263
+codex/fold/skills/impeccable-normalize/SKILL.md
+  3e2d629f14c13e88 1-69
+codex/fold/skills/free-tool-strategy/SKILL.md
+  3e2d629f14c13e88 1-179
+codex/fold/skills/sales-enablement/evals/evals.json
+  3e2d629f14c13e88 1-91
+codex/fold/skills/trailofbits-sharp-edges/SKILL.md
+  3e2d629f14c13e88 1-292
+codex/fold/skills/social-content/references/platform-limits.md
+  3e2d629f14c13e88 1-110
+codex/fold/skills/turborepo/references/best-practices/dependencies.md
+  3e2d629f14c13e88 1-246
+README.md
+  3e2d629f14c13e88 3,7,34-44,46-149
+codex/fold/skills/dogfood/templates/dogfood-report-template.md
+  3e2d629f14c13e88 1-53
+codex/fold/skills/form-cro/SKILL.md
+  3e2d629f14c13e88 1-429
+codex/fold/skills/impeccable-delight/SKILL.md
+  3e2d629f14c13e88 1-302
+codex/fold/skills/paywall-upgrade-cro/SKILL.md
+  3e2d629f14c13e88 1-227
+codex/fold/skills/impeccable-quieter/SKILL.md
+  3e2d629f14c13e88 1-101
+codex/fold/skills/seo-audit/SKILL.md
+  3e2d629f14c13e88 1-412
+codex/fold/skills/trailofbits-variant-analysis/resources/codeql/javascript.ql
+  3e2d629f14c13e88 1-63
+codex/fold/skills/impeccable-optimize/SKILL.md
+  3e2d629f14c13e88 1-264
+codex/fold/skills/trailofbits-sharp-edges/references/crypto-apis.md
+  3e2d629f14c13e88 1-190
+codex/fold/skills/turborepo/references/ci/RULE.md
+  3e2d629f14c13e88 1-79
+codex/fold/skills/copywriting/references/natural-transitions.md
+  3e2d629f14c13e88 1-272
+codex/fold/skills/copy-editing/SKILL.md
+  3e2d629f14c13e88 1-508
+codex/fold/skills/turborepo/references/caching/gotchas.md
+  3e2d629f14c13e88 1-190
+codex/fold/skills/paid-ads/references/ad-copy-templates.md
+  3e2d629f14c13e88 1-207
+codex/fold/skills/copywriting/SKILL.md
+  3e2d629f14c13e88 1-252
+codex/fold/skills/trailofbits-sharp-edges/references/config-patterns.md
+  3e2d629f14c13e88 1-333
+codex/fold/skills/analytics-tracking/SKILL.md
+  3e2d629f14c13e88 1-309
+codex/fold/skills/revops/SKILL.md
+  3e2d629f14c13e88 1-345
+codex/fold/skills/audit/references/fix-now-procedure.md
+  3e2d629f14c13e88 1-48
+codex/fold/skills/trailofbits-audit-context-building/resources/OUTPUT_REQUIREMENTS.md
+  3e2d629f14c13e88 1-71
+codex/fold/skills/trailofbits-sharp-edges/references/lang-python.md
+  3e2d629f14c13e88 1-274
+codex/fold/skills/logging-best-practices/SKILL.md
+  3e2d629f14c13e88 1-127
+codex/fold/skills/trailofbits-entry-point-analyzer/references/solana.md
+  3e2d629f14c13e88 1-155
+codex/fold/skills/trailofbits-spec-to-code-compliance/resources/OUTPUT_REQUIREMENTS.md
+  3e2d629f14c13e88 1-105
+codex/fold/skills/site-architecture/evals/evals.json
+  3e2d629f14c13e88 1-88
+codex/fold/skills/impeccable-bolder/SKILL.md
+  3e2d629f14c13e88 1-115
+codex/fold/skills/trailofbits-audit-context-building/resources/FUNCTION_MICRO_ANALYSIS_EXAMPLE.md
+  3e2d629f14c13e88 1-355
+codex/fold/skills/trailofbits-sharp-edges/references/case-studies.md
+  3e2d629f14c13e88 1-274
+codex/fold/skills/caveman/assets/caveman-small.svg
+  3e2d629f14c13e88 1-7
+codex/fold/skills/fallow/references/gotchas.md
+  3e2d629f14c13e88 1-487
+codex/fold/skills/onboarding-cro/references/experiments.md
+  3e2d629f14c13e88 1-258
+codex/fold/skills/impeccable-polish/SKILL.md
+  3e2d629f14c13e88 1-201
+codex/fold/skills/trailofbits-audit-context-building/resources/COMPLETENESS_CHECKLIST.md
+  3e2d629f14c13e88 1-47
+codex/fold/skills/turborepo/references/cli/commands.md
+  3e2d629f14c13e88 1-297
+codex/fold/skills/analytics-tracking/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/impeccable-impeccable/reference/color-and-contrast.md
+  3e2d629f14c13e88 1-105
+codex/fold/skills/agent-browser/templates/capture-workflow.sh
+  3e2d629f14c13e88 1-69
+codex/fold/skills/pricing-strategy/references/research-methods.md
+  3e2d629f14c13e88 1-152
+codex/fold/skills/revops/references/routing-rules.md
+  3e2d629f14c13e88 1-203
+codex/fold/skills/site-architecture/SKILL.md
+  3e2d629f14c13e88 1-357
+codex/fold/skills/cold-email/references/personalization.md
+  3e2d629f14c13e88 1-79
+codex/fold/skills/social-content/evals/evals.json
+  3e2d629f14c13e88 1-92
+codex/fold/skills/trailofbits-differential-review/patterns.md
+  3e2d629f14c13e88 1-300
+codex/fold/skills/competitor-alternatives/references/content-architecture.md
+  3e2d629f14c13e88 1-271
+codex/fold/skills/trailofbits-entry-point-analyzer/references/vyper.md
+  3e2d629f14c13e88 1-141
+codex/fold/skills/content-strategy/references/headless-cms.md
+  3e2d629f14c13e88 1-194
+codex/fold/skills/logging-best-practices/rules/structure.md
+  3e2d629f14c13e88 1-193
+codex/fold/skills/turborepo/SKILL.md
+  3e2d629f14c13e88 1-951
+codex/fold/skills/impeccable-impeccable/reference/typography.md
+  3e2d629f14c13e88 1-142
+codex/fold/skills/turborepo/references/filtering/patterns.md
+  3e2d629f14c13e88 1-152
+codex/fold/skills/turborepo/references/caching/RULE.md
+  3e2d629f14c13e88 1-153
+codex/fold/skills/competitor-alternatives/SKILL.md
+  3e2d629f14c13e88 1-256
+codex/fold/skills/churn-prevention/references/dunning-playbook.md
+  3e2d629f14c13e88 1-408
+codex/fold/skills/workflow/SKILL.md
+  3e2d629f14c13e88 1-225
+codex/fold/skills/trailofbits-variant-analysis/resources/codeql/cpp.ql
+  3e2d629f14c13e88 1-119
+codex/fold/skills/turborepo/references/environment/gotchas.md
+  3e2d629f14c13e88 1-175
+codex/fold/skills/impeccable-typeset/SKILL.md
+  3e2d629f14c13e88 1-114
+codex/fold/skills/fallow/references/patterns.md
+  3e2d629f14c13e88 1-662
+codex/fold/skills/turborepo/references/ci/vercel.md
+  3e2d629f14c13e88 1-103
+codex/fold/skills/onboarding-cro/evals/evals.json
+  3e2d629f14c13e88 1-92
+codex/fold/skills/tdd/SKILL.md
+  3e2d629f14c13e88 1-107
+codex/fold/skills/caveman/agents/openai.yaml
+  3e2d629f14c13e88 1-6
+codex/fold/skills/agent-browser/references/session-management.md
+  3e2d629f14c13e88 1-193
+codex/fold/skills/impeccable-animate/SKILL.md
+  3e2d629f14c13e88 1-173
+codex/fold/skills/schema-markup/references/schema-examples.md
+  3e2d629f14c13e88 1-398
+codex/fold/skills/agent-browser/references/video-recording.md
+  3e2d629f14c13e88 1-173
+codex/fold/skills/ai-seo/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/trailofbits-variant-analysis/resources/semgrep/javascript.yaml
+  3e2d629f14c13e88 1-60
+codex/fold/skills/cold-email/references/benchmarks.md
+  3e2d629f14c13e88 1-83
+codex/fold/skills/lead-magnets/SKILL.md
+  3e2d629f14c13e88 1-310
+codex/fold/skills/impeccable-shape/SKILL.md
+  3e2d629f14c13e88 1-94
+codex/fold/skills/agent-browser/templates/form-automation.sh
+  3e2d629f14c13e88 1-62
+codex/fold/skills/trailofbits-ask-questions-if-underspecified/SKILL.md
+  3e2d629f14c13e88 1-85
+codex/fold/skills/trailofbits-gh-cli/SKILL.md
+  3e2d629f14c13e88 1-37
+codex/fold/skills/trailofbits-variant-analysis/METHODOLOGY.md
+  3e2d629f14c13e88 1-327
+codex/fold/skills/turborepo/references/best-practices/RULE.md
+  3e2d629f14c13e88 1-241
+codex/fold/skills/trailofbits-variant-analysis/resources/codeql/java.ql
+  3e2d629f14c13e88 1-71
+codex/fold/skills/fold-update/SKILL.md
+  3e2d629f14c13e88 1-124
+codex/fold/skills/trailofbits-sharp-edges/references/lang-php.md
+  3e2d629f14c13e88 1-245
+codex/fold/skills/trailofbits-spec-to-code-compliance/SKILL.md
+  3e2d629f14c13e88 1-357
+codex/fold/skills/audit/SKILL.md
+  3e2d629f14c13e88 1-251
+codex/fold/skills/social-content/references/platforms.md
+  3e2d629f14c13e88 1-170
+codex/fold/skills/trailofbits-sharp-edges/references/lang-swift.md
+  3e2d629f14c13e88 1-287
+codex/fold/skills/logging-best-practices/rules/context.md
+  3e2d629f14c13e88 1-157
+codex/fold/skills/seo-audit/evals/evals.json
+  3e2d629f14c13e88 1-136
+codex/fold/skills/marketing-psychology/SKILL.md
+  3e2d629f14c13e88 1-455
+.agents/plugins/marketplace.json
+  3e2d629f14c13e88 1-20
+codex/fold/skills/impeccable-teach-impeccable/SKILL.md
+  3e2d629f14c13e88 1-10
+codex/fold/skills/signup-flow-cro/evals/evals.json
+  3e2d629f14c13e88 1-88
+codex/fold/skills/trailofbits-sharp-edges/references/lang-go.md
+  3e2d629f14c13e88 1-270
+codex/fold/skills/trailofbits-workflow-skill-design/workflows/design-a-workflow-skill.md
+  3e2d629f14c13e88 1-171
+codex/fold/skills/lead-magnets/references/format-guide.md
+  3e2d629f14c13e88 1-196
+codex/fold/skills/referral-program/SKILL.md
+  3e2d629f14c13e88 1-257
+codex/fold/skills/churn-prevention/references/cancel-flow-patterns.md
+  3e2d629f14c13e88 1-316
+codex/fold/skills/ai-seo/references/platform-ranking-factors.md
+  3e2d629f14c13e88 1-152
+codex/fold/skills/agent-browser/SKILL.md
+  3e2d629f14c13e88 1-828
+codex/fold/skills/turborepo/command/turborepo.md
+  3e2d629f14c13e88 1-70
+codex/fold/skills/trailofbits-entry-point-analyzer/references/move-aptos.md
+  3e2d629f14c13e88 1-107
+codex/fold/skills/copy-editing/references/plain-english-alternatives.md
+  3e2d629f14c13e88 1-394
+codex/fold/skills/impeccable-adapt/SKILL.md
+  3e2d629f14c13e88 1-197
+codex/fold/skills/impeccable-impeccable/reference/ux-writing.md
+  3e2d629f14c13e88 1-107
+codex/fold/skills/trailofbits-variant-analysis/resources/codeql/go.ql
+  3e2d629f14c13e88 1-69
+codex/fold/skills/impeccable-onboard/SKILL.md
+  3e2d629f14c13e88 1-244
+codex/fold/skills/last30days/SKILL.md
+  3e2d629f14c13e88 1-231
+codex/fold/skills/cold-email/SKILL.md
+  3e2d629f14c13e88 1-158
+codex/fold/skills/paid-ads/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/revops/evals/evals.json
+  3e2d629f14c13e88 1-91
+codex/fold/skills/audit/references/finding-analysis.md
+  3e2d629f14c13e88 1-114
+codex/fold/skills/turborepo/references/watch/RULE.md
+  3e2d629f14c13e88 1-99
+codex/fold/skills/analytics-tracking/references/gtm-implementation.md
+  3e2d629f14c13e88 1-390
+codex/fold/skills/impeccable-impeccable/reference/motion-design.md
+  3e2d629f14c13e88 1-99
+codex/fold/skills/trailofbits-entry-point-analyzer/references/cosmwasm.md
+  3e2d629f14c13e88 1-182
+codex/fold/skills/ai-seo/references/content-patterns.md
+  3e2d629f14c13e88 1-285
+codex/fold/skills/customer-research/evals/evals.json
+  3e2d629f14c13e88 1-162
+codex/fold/skills/audit/agents/openai.yaml
+  3e2d629f14c13e88 1-4
+codex/fold/skills/trailofbits-differential-review/SKILL.md
+  3e2d629f14c13e88 1-220
+codex/fold/skills/trailofbits-skill-improver/SKILL.md
+  3e2d629f14c13e88 1-152
+codex/fold/skills/impeccable-critique/reference/personas.md
+  3e2d629f14c13e88 1-178
+codex/fold/skills/trailofbits-spec-to-code-compliance/resources/IR_EXAMPLES.md
+  3e2d629f14c13e88 1-417
+codex/fold/skills/schema-markup/SKILL.md
+  3e2d629f14c13e88 1-179
+codex/fold/skills/customer-research/SKILL.md
+  3e2d629f14c13e88 1-270
+codex/fold/skills/social-content/references/post-templates.md
+  3e2d629f14c13e88 1-177
+codex/fold/skills/turborepo/references/configuration/global-options.md
+  3e2d629f14c13e88 1-239
+codex/fold/skills/ai-seo/SKILL.md
+  3e2d629f14c13e88 1-443
+codex/fold/skills/launch-strategy/evals/evals.json
+  3e2d629f14c13e88 1-91
+codex/fold/skills/referral-program/references/affiliate-programs.md
+  3e2d629f14c13e88 1-167
+codex/fold/skills/tdd/refactoring.md
+  3e2d629f14c13e88 1-10
+codex/fold/skills/copywriting/references/copy-frameworks.md
+  3e2d629f14c13e88 1-344
+codex/fold/skills/trailofbits-variant-analysis/resources/semgrep/go.yaml
+  3e2d629f14c13e88 1-63
+codex/fold/skills/marketing-ideas/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/impeccable-audit/SKILL.md
+  3e2d629f14c13e88 1-146
+codex/fold/skills/impeccable-impeccable/reference/interaction-design.md
+  3e2d629f14c13e88 1-195
+codex/fold/skills/agent-browser/references/profiling.md
+  3e2d629f14c13e88 1-120
+codex/fold/skills/logging-best-practices/rules/wide-events.md
+  3e2d629f14c13e88 1-113
+codex/fold/skills/impeccable-frontend-design/SKILL.md
+  3e2d629f14c13e88 1-12
+codex/fold/skills/trailofbits-audit-context-building/SKILL.md
+  3e2d629f14c13e88 1-302
+codex/fold/skills/trailofbits-entry-point-analyzer/SKILL.md
+  3e2d629f14c13e88 1-251
+codex/fold/skills/churn-prevention/SKILL.md
+  3e2d629f14c13e88 1-424
+sync-codex.sh
+  3e2d629f14c13e88 1-159
+codex/fold/skills/revops/references/scoring-models.md
+  3e2d629f14c13e88 1-247
+codex/fold/skills/turborepo/references/configuration/tasks.md
+  3e2d629f14c13e88 1-325
+codex/fold/skills/churn-prevention/evals/evals.json
+  3e2d629f14c13e88 1-93
+codex/fold/skills/social-content/SKILL.md
+  3e2d629f14c13e88 1-327
+codex/fold/skills/trailofbits-differential-review/methodology.md
+  3e2d629f14c13e88 1-234
+codex/fold/skills/copywriting/evals/evals.json
+  3e2d629f14c13e88 1-111
+codex/fold/skills/fold-pr/SKILL.md
+  3e2d629f14c13e88 1-94
+codex/fold/skills/trailofbits-sharp-edges/references/lang-java.md
+  3e2d629f14c13e88 1-263
+codex/fold/skills/paywall-upgrade-cro/evals/evals.json
+  3e2d629f14c13e88 1-93
+codex/fold/skills/cold-email/evals/evals.json
+  3e2d629f14c13e88 1-94
+codex/fold/skills/impeccable-harden/SKILL.md
+  3e2d629f14c13e88 1-353
+codex/fold/skills/impeccable-clarify/SKILL.md
+  3e2d629f14c13e88 1-181
+codex/fold/skills/impeccable-critique/SKILL.md
+  3e2d629f14c13e88 1-223
+codex/fold/skills/ad-creative/references/platform-specs.md
+  3e2d629f14c13e88 1-213
+codex/fold/skills/trailofbits-variant-analysis/resources/semgrep/cpp.yaml
+  3e2d629f14c13e88 1-98
+codex/fold/skills/paywall-upgrade-cro/references/experiments.md
+  3e2d629f14c13e88 1-164
+codex/fold/skills/turborepo/references/configuration/gotchas.md
+  3e2d629f14c13e88 1-368
+codex/fold/skills/content-strategy/SKILL.md
+  3e2d629f14c13e88 1-365
+codex/fold/skills/cold-email/references/subject-lines.md
+  3e2d629f14c13e88 1-53
+codex/fold/skills/ab-test-setup/evals/evals.json
+  3e2d629f14c13e88 1-105
+codex/fold/skills/impeccable-impeccable/SKILL.md
+  3e2d629f14c13e88 1-342
+codex/fold/skills/paid-ads/SKILL.md
+  3e2d629f14c13e88 1-315
+codex/fold/skills/ad-creative/references/generative-tools.md
+  3e2d629f14c13e88 1-637
+codex/fold/skills/email-sequence/SKILL.md
+  3e2d629f14c13e88 1-311
+codex/README.md
+  3e2d629f14c13e88 1-17
+codex/fold/skills/launch-strategy/SKILL.md
+  3e2d629f14c13e88 1-353
+codex/fold/skills/trailofbits-variant-analysis/resources/variant-report-template.md
+  3e2d629f14c13e88 1-75
+codex/fold/skills/trailofbits-workflow-skill-design/references/anti-patterns.md
+  3e2d629f14c13e88 1-528
+codex/fold/skills/customer-research/references/source-guides.md
+  3e2d629f14c13e88 1-401
+codex/fold/skills/ab-test-setup/references/sample-size-guide.md
+  3e2d629f14c13e88 1-263
+codex/fold/skills/fold-doctor/SKILL.md
+  3e2d629f14c13e88 1-119
+codex/fold/skills/agent-browser/references/proxy-support.md
+  3e2d629f14c13e88 1-194
+codex/fold/skills/trailofbits-spec-to-code-compliance/resources/COMPLETENESS_CHECKLIST.md
+  3e2d629f14c13e88 1-69
+codex/fold/skills/trailofbits-entry-point-analyzer/references/move-sui.md
+  3e2d629f14c13e88 1-87
+codex/fold/skills/seo-audit/references/ai-writing-detection.md
+  3e2d629f14c13e88 1-200
+codex/fold/skills/agent-browser/references/snapshot-refs.md
+  3e2d629f14c13e88 1-219
+codex/fold/skills/copy-editing/evals/evals.json
+  3e2d629f14c13e88 1-89
+codex/fold/skills/caveman/assets/caveman.svg
+  3e2d629f14c13e88 1-7
+codex/fold/skills/page-cro/evals/evals.json
+  3e2d629f14c13e88 1-111
+codex/fold/skills/ad-creative/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/programmatic-seo/references/playbooks.md
+  3e2d629f14c13e88 1-308
+codex/fold/skills/turborepo/references/boundaries/RULE.md
+  3e2d629f14c13e88 1-126
+sync.sh
+  3e2d629f14c13e88 6-8,17-30
+codex/fold/skills/impeccable-distill/SKILL.md
+  3e2d629f14c13e88 1-120
+codex/fold/skills/email-sequence/references/copy-guidelines.md
+  3e2d629f14c13e88 1-113
+codex/fold/skills/email-sequence/references/sequence-templates.md
+  3e2d629f14c13e88 1-168
+codex/fold/skills/impeccable-critique/reference/cognitive-load.md
+  3e2d629f14c13e88 1-106
+codex/fold/skills/competitor-alternatives/evals/evals.json
+  3e2d629f14c13e88 1-93
+codex/fold/skills/free-tool-strategy/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/product-marketing-context/SKILL.md
+  3e2d629f14c13e88 1-241
+codex/fold/skills/ab-test-setup/references/test-templates.md
+  3e2d629f14c13e88 1-277
+codex/fold/skills/resolve-reviews/SKILL.md
+  3e2d629f14c13e88 1-213
+codex/fold/skills/sales-enablement/references/objection-library.md
+  3e2d629f14c13e88 1-270
+codex/fold/skills/turborepo/references/best-practices/structure.md
+  3e2d629f14c13e88 1-297
+codex/fold/skills/ubiquitous-language/SKILL.md
+  3e2d629f14c13e88 1-92
+codex/fold/skills/turborepo/references/environment/modes.md
+  3e2d629f14c13e88 1-101
+codex/fold/skills/page-cro/references/experiments.md
+  3e2d629f14c13e88 1-248
+codex/fold/skills/trailofbits-differential-review/reporting.md
+  3e2d629f14c13e88 1-369
+codex/fold/skills/paid-ads/references/audience-targeting.md
+  3e2d629f14c13e88 1-243
+codex/fold/skills/trailofbits-workflow-skill-design/workflows/review-checklist.md
+  3e2d629f14c13e88 1-67
+codex/fold/skills/popup-cro/evals/evals.json
+  3e2d629f14c13e88 1-94
+codex/fold/skills/impeccable-colorize/SKILL.md
+  3e2d629f14c13e88 1-141
+codex/fold/skills/impeccable-impeccable/reference/spatial-design.md
+  3e2d629f14c13e88 1-100
+codex/fold/skills/marketing-ideas/SKILL.md
+  3e2d629f14c13e88 1-167
+codex/fold/skills/email-sequence/evals/evals.json
+  3e2d629f14c13e88 1-93
+codex/fold/skills/trailofbits-workflow-skill-design/references/tool-assignment-guide.md
+  3e2d629f14c13e88 1-269
+codex/fold/skills/trailofbits-workflow-skill-design/references/workflow-patterns.md
+  3e2d629f14c13e88 1-297
+codex/fold/skills/trailofbits-workflow-skill-design/references/progressive-disclosure-guide.md
+  3e2d629f14c13e88 1-119
+codex/fold/skills/cold-email/references/follow-up-sequences.md
+  3e2d629f14c13e88 1-81
+codex/fold/skills/pricing-strategy/SKILL.md
+  3e2d629f14c13e88 1-231
+codex/fold/skills/tdd/interface-design.md
+  3e2d629f14c13e88 1-31
+codex/fold/skills/trailofbits-sharp-edges/references/lang-javascript.md
+  3e2d629f14c13e88 1-269
+codex/fold/skills/turborepo/references/configuration/RULE.md
+  3e2d629f14c13e88 1-235
+codex/fold/skills/site-architecture/references/navigation-patterns.md
+  3e2d629f14c13e88 1-305
+codex/fold/skills/marketing-psychology/evals/evals.json
+  3e2d629f14c13e88 1-88
+codex/fold/skills/programmatic-seo/evals/evals.json
+  3e2d629f14c13e88 1-94
+codex/fold/skills/tdd/tests.md
+  3e2d629f14c13e88 1-61
+codex/fold/skills/trailofbits-variant-analysis/resources/semgrep/java.yaml
+  3e2d629f14c13e88 1-61
+codex/fold/skills/analytics-tracking/references/ga4-implementation.md
+  3e2d629f14c13e88 1-300
+codex/fold/skills/tdd/mocking.md
+  3e2d629f14c13e88 1-59
+codex/fold/skills/trailofbits-entry-point-analyzer/references/ton.md
+  3e2d629f14c13e88 1-185
+codex/fold/skills/ethskills/SKILL.md
+  3e2d629f14c13e88 1-169
+codex/fold/skills/revops/references/automation-playbooks.md
+  3e2d629f14c13e88 1-290
+codex/fold/skills/trailofbits-sharp-edges/references/auth-patterns.md
+  3e2d629f14c13e88 1-252
+codex/fold/skills/trailofbits-variant-analysis/resources/codeql/python.ql
+  3e2d629f14c13e88 1-80
+codex/fold/skills/referral-program/references/program-examples.md
+  3e2d629f14c13e88 1-143
+codex/fold/skills/site-architecture/references/site-type-templates.md
+  3e2d629f14c13e88 1-293
+codex/fold/skills/social-content/references/reverse-engineering.md
+  3e2d629f14c13e88 1-195
+codex/fold/skills/turborepo/references/caching/remote-cache.md
+  3e2d629f14c13e88 1-127
+codex/fold/skills/agent-browser/references/authentication.md
+  3e2d629f14c13e88 1-303
+codex/fold/skills/trailofbits-differential-review/adversarial.md
+  3e2d629f14c13e88 1-203
+codex/fold/skills/lead-magnets/references/benchmarks.md
+  3e2d629f14c13e88 1-129
+codex/fold/skills/product-marketing-context/evals/evals.json
+  3e2d629f14c13e88 1-85
+codex/fold/skills/tdd/deep-modules.md
+  3e2d629f14c13e88 1-33
+codex/fold/skills/content-strategy/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/revops/references/lifecycle-definitions.md
+  3e2d629f14c13e88 1-278
+codex/fold/skills/logging-best-practices/README.md
+  3e2d629f14c13e88 1-44
+codex/fold/skills/impeccable-impeccable/reference/craft.md
+  3e2d629f14c13e88 1-70
+codex/fold/skills/trailofbits-sharp-edges/references/language-specific.md
+  3e2d629f14c13e88 1-588
+codex/fold/skills/turborepo/references/cli/RULE.md
+  3e2d629f14c13e88 1-100
+codex/fold/skills/turborepo/references/environment/RULE.md
+  3e2d629f14c13e88 1-123
+codex/fold/skills/sales-enablement/references/one-pager-templates.md
+  3e2d629f14c13e88 1-208
+codex/fold/skills/trailofbits-sharp-edges/references/lang-c.md
+  3e2d629f14c13e88 1-205
+codex/fold/skills/logging-best-practices/rules/pitfalls.md
+  3e2d629f14c13e88 1-118
+codex/fold/skills/trailofbits-variant-analysis/resources/semgrep/python.yaml
+  3e2d629f14c13e88 1-72
+codex/fold/skills/impeccable-impeccable/reference/responsive-design.md
+  3e2d629f14c13e88 1-114
+codex/fold/skills/workflow/agents/openai.yaml
+  3e2d629f14c13e88 1-4
+codex/fold/skills/turborepo/references/best-practices/packages.md
+  3e2d629f14c13e88 1-335
+codex/fold/skills/analytics-tracking/references/event-library.md
+  3e2d629f14c13e88 1-260
+codex/fold/skills/caveman/SKILL.md
+  3e2d629f14c13e88 1-63
+codex/fold/skills/impeccable-arrange/SKILL.md
+  3e2d629f14c13e88 1-123
+codex/fold/skills/trailofbits-entry-point-analyzer/references/solidity.md
+  3e2d629f14c13e88 1-135
+codex/fold/skills/paid-ads/references/platform-setup-checklists.md
+  3e2d629f14c13e88 1-277
+codex/fold/skills/trailofbits-sharp-edges/references/lang-ruby.md
+  3e2d629f14c13e88 1-273
+codex/fold/.codex-plugin/plugin.json
+  3e2d629f14c13e88 1-36
+codex/fold/skills/community-marketing/SKILL.md
+  3e2d629f14c13e88 1-143
+codex/fold/skills/competitor-alternatives/references/templates.md
+  3e2d629f14c13e88 1-223
+codex/fold/skills/sales-enablement/references/demo-scripts.md
+  3e2d629f14c13e88 1-355
+codex/fold/skills/fallow/SKILL.md
+  3e2d629f14c13e88 1-301
+codex/fold/skills/form-cro/evals/evals.json
+  3e2d629f14c13e88 1-90
+codex/fold/skills/impeccable-overdrive/SKILL.md
+  3e2d629f14c13e88 1-140
+codex/fold/skills/copy-editing/references/content-refresh.md
+  3e2d629f14c13e88 1-38
+codex/fold/skills/page-cro/SKILL.md
+  3e2d629f14c13e88 1-182
+codex/fold/skills/trailofbits-sharp-edges/references/lang-kotlin.md
+  3e2d629f14c13e88 1-265
+codex/fold/skills/turborepo/references/filtering/RULE.md
+  3e2d629f14c13e88 1-148
+codex/fold/skills/turborepo/references/ci/patterns.md
+  3e2d629f14c13e88 1-145
+codex/fold/skills/trailofbits-sharp-edges/references/lang-csharp.md
+  3e2d629f14c13e88 1-285
+codex/fold/skills/programmatic-seo/SKILL.md
+  3e2d629f14c13e88 1-238
+codex/fold/skills/trailofbits-variant-analysis/SKILL.md
+  3e2d629f14c13e88 1-142
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "bda8cbc50edf8efeb97c209faa25596ed6693d07",
+  "prompts": {
+    "3e2d629f14c13e88": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d77ca-3884-75b1-bac7-725fe31b1630",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 60955,
+      "total_deletions": 2,
+      "accepted_lines": 60847,
+      "overriden_lines": 48
+    }
+  }
+}
