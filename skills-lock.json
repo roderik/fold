@@ -14,7 +14,7 @@
     "fallow": {
       "source": "fallow-rs/fallow-skills",
       "sourceType": "github",
-      "computedHash": "d2d3bfec8c94781cf2ed05410b6cb077a6039391a445b435bd8a7846f5c3d4d7"
+      "computedHash": "1cc82f6b860cfe75d1f4ff6b596d784c7bae46f8bd8815a63f5e7599a47821d1"
     },
     "logging-best-practices": {
       "source": "boristane/agent-skills",
@@ -44,7 +44,7 @@
     "turborepo": {
       "source": "vercel/turborepo",
       "sourceType": "github",
-      "computedHash": "3e4a4f187f4064de1aee81f1000f18729a3f6f361f55774c05e7a3025f8a194b"
+      "computedHash": "a3579e99274b52907d41147531370ada7645df28dabfe5ab2d244a99aa3f654e"
     },
     "ubiquitous-language": {
       "source": "mattpocock/skills",

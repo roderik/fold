@@ -14,6 +14,7 @@ Complete command and flag specifications for all fallow CLI commands.
 - [`migrate`: Config Migration](#migrate-config-migration)
 - [`health`: Function Complexity Analysis](#health-function-complexity-analysis)
 - [`audit`: Changed-File Quality Gate](#audit-changed-file-quality-gate)
+- [`flags`: Feature Flag Detection](#flags-feature-flag-detection)
 - [`schema`: CLI Introspection](#schema-cli-introspection)
 - [`config-schema`: Config JSON Schema](#config-schema-config-json-schema)
 - [`plugin-schema`: Plugin JSON Schema](#plugin-schema-plugin-json-schema)
@@ -375,7 +376,7 @@ fallow health --format json --quiet --trend
 ```json
 {
   "schema_version": 3,
-  "version": "2.22.1",
+  "version": "2.27.0",
   "elapsed_ms": 32,
   "summary": {
     "files_analyzed": 482,
@@ -398,6 +399,23 @@ fallow health --format json --quiet --trend
   ]
 }
 ```
+
+When the unit size very-high-risk percentage is >= 3%, the JSON output includes a `large_functions` array listing functions exceeding 60 lines of code:
+
+```json
+{
+  "large_functions": [
+    {
+      "path": "src/parser.ts",
+      "name": "parseExpression",
+      "line": 42,
+      "line_count": 95
+    }
+  ]
+}
+```
+
+This drill-down shows which specific functions are driving the unit size penalty in the health score, making it actionable without a separate analysis pass.
 
 With `--file-scores`, the JSON output also includes `file_scores` array and `summary.files_scored` / `summary.average_maintainability`:
 
@@ -516,12 +534,26 @@ All `health` JSON output includes a `vital_signs` object with project-wide metri
     "maintainability_avg": 88.5,
     "hotspot_count": 7,
     "circular_dep_count": 2,
-    "unused_dep_count": 3
+    "unused_dep_count": 3,
+    "unit_size_profile": {
+      "low_risk": 82.1,
+      "medium_risk": 11.4,
+      "high_risk": 4.3,
+      "very_high_risk": 2.2
+    },
+    "unit_interfacing_profile": {
+      "low_risk": 95.6,
+      "medium_risk": 3.8,
+      "high_risk": 0.5,
+      "very_high_risk": 0.1
+    },
+    "p95_fan_in": 8,
+    "coupling_high_pct": 2.3
   }
 }
 ```
 
-Fields are `null` when the corresponding data source is not available (e.g., `hotspot_count` is null without `--hotspots` or when git is not available).
+Fields are `null` when the corresponding data source is not available (e.g., `hotspot_count` is null without `--hotspots` or when git is not available). The `unit_size_profile` and `unit_interfacing_profile` are risk distribution histograms (low risk / medium risk / high risk / very high risk as percentages). `p95_fan_in` is the 95th percentile of incoming dependencies. `coupling_high_pct` is the percentage of files above the effective coupling threshold.
 
 With `--score`, the JSON output includes a `health_score` object:
 
@@ -538,13 +570,16 @@ With `--score`, the JSON output includes a `health_score` object:
       "maintainability": 0.0,
       "hotspots": 0.0,
       "unused_deps": 10.0,
-      "circular_deps": 4.0
+      "circular_deps": 4.0,
+      "unit_size": 0.0,
+      "coupling": 0.0,
+      "duplication": 4.0
     }
   }
 }
 ```
 
-Score is reproducible: `100 - sum(penalties) == score`. Penalty fields are absent when the pipeline didn't run. Grades: A (>= 85), B (70-84), C (55-69), D (40-54), F (< 40).
+Score is reproducible: `100 - sum(penalties) == score`. Penalty fields are absent when the pipeline didn't run. `--score` automatically runs duplication analysis. Grades: A (>= 85), B (70-84), C (55-69), D (40-54), F (< 40).
 
 ### Health Trend
 
@@ -587,7 +622,7 @@ With `--trend`, the JSON output includes a `health_trend` object comparing curre
 }
 ```
 
-Metrics tracked: `score`, `dead_file_pct`, `dead_export_pct`, `avg_cyclomatic`, `maintainability_avg`, `unused_dep_count`, `circular_dep_count`, `hotspot_count`. Each metric includes `direction` (`improving`, `declining`, `stable`). Percentage metrics include `previous_count`/`current_count` with raw numerator/denominator. `--trend` requires at least one saved snapshot in `.fallow/snapshots/`.
+Metrics tracked: `score`, `dead_file_pct`, `dead_export_pct`, `avg_cyclomatic`, `maintainability_avg`, `unused_dep_count`, `circular_dep_count`, `hotspot_count`, `unit_size_very_high_pct`, `p95_fan_in`, `duplication_pct`. Each metric includes `direction` (`improving`, `declining`, `stable`). Percentage metrics include `previous_count`/`current_count` with raw numerator/denominator. `--trend` requires at least one saved snapshot in `.fallow/snapshots/`. When comparing against a snapshot from an older schema version (current: v5), the trend output warns that score deltas may reflect formula changes.
 
 ### Vital Signs Snapshots
 
@@ -595,7 +630,7 @@ Metrics tracked: `score`, `dead_file_pct`, `dead_export_pct`, `avg_cyclomatic`, 
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 5,
   "timestamp": "2025-12-01T10:30:00Z",
   "vital_signs": {
     "dead_file_pct": 3.2,
@@ -680,7 +715,7 @@ fallow audit --ci
 ```json
 {
   "schema_version": 3,
-  "version": "2.22.1",
+  "version": "2.27.0",
   "command": "audit",
   "verdict": "fail",
   "changed_files_count": 12,
@@ -709,6 +744,45 @@ fallow audit --ci
 ```
 
 The `verdict` field is always present and is the primary decision signal. Dead code, complexity, and duplication sections follow their respective schemas from the individual commands. Thresholds for complexity are inherited from `fallow health` config (defaults: cyclomatic 20, cognitive 15).
+
+---
+
+## `flags`: Feature Flag Detection
+
+Detects feature flag patterns in the codebase. Identifies environment variable flags (`process.env.FEATURE_*`), SDK calls (LaunchDarkly, Statsig, Unleash, GrowthBook), and config object patterns (opt-in). Reports flag locations, detection confidence, and cross-references with dead code findings.
+
+### Flags
+
+| Flag | Type | Default | Description |
+|------|------|---------|-------------|
+| `--format` | `human\|json\|sarif\|compact\|markdown\|codeclimate` | `human` | Output format |
+| `--quiet` | bool | `false` | Suppress progress bars |
+| `--top` | number | — | Show only the top N flags |
+
+### Examples
+
+```bash
+# Detect all feature flags with JSON output
+fallow flags --format json --quiet
+
+# Top 10 flags
+fallow flags --format json --quiet --top 10
+
+# Single workspace package
+fallow flags --format json --quiet --workspace my-package
+```
+
+### JSON Output Structure
+
+```json
+{
+  "schema_version": 3,
+  "version": "2.27.0",
+  "elapsed_ms": 116,
+  "feature_flags": [],
+  "total_flags": 0
+}
+```
 
 ---
 
@@ -847,7 +921,7 @@ Set `FALLOW_FORMAT=json` and `FALLOW_QUIET=1` in your agent environment to avoid
 ```json
 {
   "schema_version": 3,
-  "version": "2.22.1",
+  "version": "2.27.0",
   "elapsed_ms": 45,
   "total_issues": 12,
   "entry_points": {
@@ -969,7 +1043,7 @@ When `--baseline` is used in combined output, the JSON includes a `baseline_delt
 ```json
 {
   "schema_version": 3,
-  "version": "2.22.1",
+  "version": "2.27.0",
   "elapsed_ms": 82,
   "total_clones": 15,
   "total_lines_duplicated": 230,
@@ -1013,7 +1087,7 @@ When running `fallow` with no subcommand (all analyses), the JSON output combine
 {
   "check": {
     "schema_version": 3,
-    "version": "2.22.1",
+    "version": "2.27.0",
     "elapsed_ms": 45,
     "total_issues": 12,
     "unused_files": [],
@@ -1034,7 +1108,7 @@ When running `fallow` with no subcommand (all analyses), the JSON output combine
   },
   "dupes": {
     "schema_version": 3,
-    "version": "2.22.1",
+    "version": "2.27.0",
     "elapsed_ms": 82,
     "total_clones": 15,
     "total_lines_duplicated": 230,
@@ -1043,7 +1117,7 @@ When running `fallow` with no subcommand (all analyses), the JSON output combine
   },
   "health": {
     "schema_version": 3,
-    "version": "2.22.1",
+    "version": "2.27.0",
     "elapsed_ms": 32,
     "summary": {},
     "findings": [],

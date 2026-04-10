@@ -1,6 +1,6 @@
 ---
 name: fallow
-description: Codebase analyzer for JavaScript/TypeScript projects. Finds unused code (files, exports, types, dependencies), code duplication, circular dependencies, complexity hotspots, and architecture boundary violations. 84 framework plugins, zero configuration, sub-second performance. Use when asked to analyze code health, find unused code, detect duplicates, check circular dependencies, audit complexity, check architecture boundaries, clean up the codebase, auto-fix issues, or run fallow.
+description: Codebase analyzer for JavaScript/TypeScript projects. Finds unused code (files, exports, types, dependencies), code duplication, circular dependencies, complexity hotspots, architecture boundary violations, and feature flag patterns. 85 framework plugins, zero configuration, sub-second performance. Use when asked to analyze code health, find unused code, detect duplicates, check circular dependencies, audit complexity, check architecture boundaries, detect feature flags, clean up the codebase, auto-fix issues, or run fallow.
 license: MIT
 metadata:
   author: Bart Waardenburg
@@ -10,7 +10,7 @@ metadata:
 
 # Fallow: Codebase Analyzer
 
-The codebase analyzer for JavaScript and TypeScript. Finds unused code, circular dependencies, code duplication, complexity hotspots, and architecture boundary violations. 84 framework plugins, zero configuration, sub-second performance.
+The codebase analyzer for JavaScript and TypeScript. Finds unused code, circular dependencies, code duplication, complexity hotspots, architecture boundary violations, and feature flag patterns. 85 framework plugins, zero configuration, sub-second performance.
 
 ## When to Use
 
@@ -22,6 +22,7 @@ The codebase analyzer for JavaScript and TypeScript. Finds unused code, circular
 - Auditing a project for structural issues
 - Setting up CI checks for dead code or duplication thresholds
 - Auto-fixing unused exports and dependencies
+- Detecting feature flag patterns (environment gates, SDK calls, config objects)
 - Investigating why a specific export or file appears unused
 
 ## When NOT to Use
@@ -68,6 +69,7 @@ cargo install fallow-cli        # build from source
 | `list` | Inspect project structure | `--files`, `--entry-points`, `--plugins`, `--boundaries` |
 | `health` | Function complexity analysis | `--complexity`, `--max-cyclomatic`, `--max-cognitive`, `--top`, `--sort`, `--file-scores`, `--hotspots`, `--targets`, `--effort`, `--score`, `--min-score`, `--since`, `--min-commits`, `--save-snapshot`, `--trend`, `--coverage-gaps`, `--workspace`, `--baseline`, `--save-baseline` |
 | `audit` | Combined dead-code + complexity + duplication for changed files | `--base`, `--production`, `--workspace`, `--ci`, `--fail-on-issues`, `--explain` |
+| `flags` | Detect feature flag patterns (env vars, SDK calls, config objects) | `--top` |
 | `schema` | Dump CLI definition as JSON | |
 
 ## Issue Types
@@ -102,6 +104,7 @@ When using fallow via MCP (`fallow-mcp`), the following tools are available:
 | `audit` | Combined dead-code + complexity + duplication for changed files, returns verdict |
 | `project_info` | Project metadata. Set `entry_points`, `files`, `plugins`, or `boundaries` to `true` to request specific sections |
 | `list_boundaries` | Architecture boundary zones and access rules. Returns `{"configured": false}` if no boundaries configured |
+| `detect_flags` | Detect feature flag patterns (env vars, SDK calls, config objects). Set `top` to limit results |
 
 All tools accept `root`, `config`, `no_cache`, and `threads` params. The MCP server subprocess timeout defaults to 120s, configurable via `FALLOW_TIMEOUT_SECS`.
 
@@ -168,7 +171,7 @@ fallow list --entry-points --format json --quiet
 fallow list --plugins --format json --quiet
 ```
 
-Shows detected entry points and active framework plugins (84 built-in: Next.js, Vite, Jest, Storybook, Tailwind, etc.).
+Shows detected entry points and active framework plugins (85 built-in: Next.js, Vite, Jest, Storybook, Tailwind, etc.).
 
 ### Production-only analysis
 
@@ -238,7 +241,7 @@ When `--format json` is active and exit code is 2, errors are emitted as JSON on
 
 ## Configuration
 
-Fallow reads config from project root: `.fallowrc.json` > `fallow.toml` > `.fallow.toml`. Most projects work with zero configuration thanks to 84 auto-detecting framework plugins.
+Fallow reads config from project root: `.fallowrc.json` > `fallow.toml` > `.fallow.toml`. Most projects work with zero configuration thanks to 85 auto-detecting framework plugins.
 
 ```jsonc
 {
@@ -278,7 +281,7 @@ export const keepThisToo = 2;
 ## Key Gotchas
 
 - **`fix --yes` is required** in non-TTY (agent) environments. Without it, `fix` exits with code 2
-- **Zero config by default.** 84 framework plugins auto-detect. Don't create config unless customization is needed
+- **Zero config by default.** 85 framework plugins auto-detect. Don't create config unless customization is needed
 - **Syntactic analysis only.** No TypeScript compiler, so fully dynamic `import(variable)` is not resolved
 - **Function overloads are deduplicated.** TypeScript function overload signatures are merged into a single export (not reported as separate unused exports)
 - **Re-export chains are resolved.** Exports through barrel files are tracked, not falsely flagged
