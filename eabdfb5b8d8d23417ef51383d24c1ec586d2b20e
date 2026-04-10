@@ -1,0 +1,41 @@
+skills/fallow/references/cli-reference.md
+  3e2d629f14c13e88 17,379,403-419,537-551,556,573-576,582,625,633,718,750-785,924,1046,1090,1111,1120
+skills/turborepo/references/environment/gotchas.md
+  3e2d629f14c13e88 115,149
+skills/turborepo/references/best-practices/structure.md
+  3e2d629f14c13e88 98,120
+skills/turborepo/references/configuration/RULE.md
+  3e2d629f14c13e88 76,100
+skills/fallow/references/patterns.md
+  3e2d629f14c13e88 590
+skills/turborepo/SKILL.md
+  3e2d629f14c13e88 12,743
+skills/fallow/SKILL.md
+  3e2d629f14c13e88 3,13,25,72,107,174,244,284
+skills/turborepo/references/environment/RULE.md
+  3e2d629f14c13e88 110
+skills/fallow/references/gotchas.md
+  3e2d629f14c13e88 26
+skills-lock.json
+  3e2d629f14c13e88 17,47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "eabdfb5b8d8d23417ef51383d24c1ec586d2b20e",
+  "prompts": {
+    "3e2d629f14c13e88": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d77ca-3884-75b1-bac7-725fe31b1630",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 108,
+      "total_deletions": 31,
+      "accepted_lines": 218,
+      "overriden_lines": 0
+    }
+  }
+}
