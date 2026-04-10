@@ -1,0 +1,35 @@
+commands/update.md
+  356875087c3e4f7f 59,61-68,73-75,140-182
+.claude-plugin/plugin.json
+  356875087c3e4f7f 4
+README.md
+  356875087c3e4f7f 28-30
+commands/setup.md
+  356875087c3e4f7f 108-110,170-211
+commands/doctor.md
+  356875087c3e4f7f 40-41,50-51,81
+skills/workflow/references/session-tools.md
+  356875087c3e4f7f 1,3,5-11,15-78
+skills/workflow/SKILL.md
+  356875087c3e4f7f 62-114,120-135,177,179,181-184,186-202,216-230,245-246,259,329,345,347-352,354,358-407,411,415,439-448,477-484,490-496,508,513,521,525-535
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "f2e7dcb6a0acbc76f7460b1f0ea1dfc9b919c916",
+  "prompts": {
+    "356875087c3e4f7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "361f7c80-a0bb-4a30-b99c-20c55ab3afb6",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Roderik van der Veer",
+      "messages": [],
+      "total_additions": 421,
+      "total_deletions": 13039,
+      "accepted_lines": 398,
+      "overriden_lines": 0
+    }
+  }
+}
