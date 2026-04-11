@@ -118,6 +118,11 @@ claude plugin install ethskills@ethskills
 ```
 
 ```bash
+claude plugin marketplace add forrestchang/andrej-karpathy-skills
+claude plugin install andrej-karpathy-skills@karpathy-skills
+```
+
+```bash
 claude plugin marketplace add trailofbits/skills
 claude plugin install skill-improver@trailofbits
 claude plugin install workflow-skill-design@trailofbits
@@ -177,6 +182,56 @@ Re-run the Codex installer to sync the latest Compound Engineering prompts and s
 
 ```bash
 bunx @every-env/compound-plugin install compound-engineering --to codex
+```
+
+### Phase 8b: Update Karpathy guidelines for Codex
+
+Inject or update the Karpathy coding guidelines in `~/.codex/AGENTS.md` (idempotent — replaces existing block or prepends if missing):
+
+```bash
+KARPATHY_BLOCK='<!-- BEGIN KARPATHY GUIDELINES -->
+## Karpathy Guidelines
+
+Behavioral guidelines to reduce common LLM coding mistakes (derived from Andrej Karpathy'\''s observations). Bias toward caution over speed; for trivial tasks, use judgment.
+
+### Think Before Coding
+- State assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them — don'\''t pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what'\''s confusing. Ask.
+
+### Simplicity First
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn'\''t requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+### Surgical Changes
+- Don'\''t "improve" adjacent code, comments, or formatting.
+- Don'\''t refactor things that aren'\''t broken.
+- Match existing style, even if you'\''d do it differently.
+- If you notice unrelated dead code, mention it — don'\''t delete it.
+- Remove imports/variables/functions that YOUR changes made unused; don'\''t remove pre-existing dead code unless asked.
+- Every changed line should trace directly to the user'\''s request.
+
+### Goal-Driven Execution
+- Transform tasks into verifiable goals: "Add validation" → "Write tests for invalid inputs, then make them pass"; "Fix the bug" → "Write a test that reproduces it, then make it pass".
+- For multi-step tasks, state a brief plan with verification per step.
+- Strong success criteria let you loop independently; weak criteria require constant clarification.
+<!-- END KARPATHY GUIDELINES -->'
+
+AGENTS_FILE="$HOME/.codex/AGENTS.md"
+if [ ! -f "$AGENTS_FILE" ]; then
+  echo "$KARPATHY_BLOCK" > "$AGENTS_FILE"
+elif grep -q '<!-- BEGIN KARPATHY GUIDELINES -->' "$AGENTS_FILE"; then
+  awk '/<!-- BEGIN KARPATHY GUIDELINES -->/{skip=1} /<!-- END KARPATHY GUIDELINES -->/{skip=0; next} !skip' "$AGENTS_FILE" > "$AGENTS_FILE.tmp"
+  printf '%s\n\n' "$KARPATHY_BLOCK" | cat - "$AGENTS_FILE.tmp" > "$AGENTS_FILE"
+  rm "$AGENTS_FILE.tmp"
+else
+  printf '%s\n\n' "$KARPATHY_BLOCK" | cat - "$AGENTS_FILE" > "$AGENTS_FILE.tmp"
+  mv "$AGENTS_FILE.tmp" "$AGENTS_FILE"
+fi
 ```
 
 ### Phase 9: Report
